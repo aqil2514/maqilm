@@ -1,0 +1,63 @@
+{
+  "Contact": {
+    "ourContact": "Kontak Kami",
+    "sendViaEmail": "Kirim melalui Email",
+    "sendViaWhatsApp": "Kirim melalui WhatsApp",
+    "viaEmail": "Melalui Email",
+    "viaWhatsApp": "Melalui WhatsApp",
+    "messageEmail": "Pesan Email",
+    "messageWhatsApp": "Pesan WhatsApp",
+    "bodyPlaceholder": "Tulis pesan Anda di sini..."
+  },
+  "General": {
+    "professions": [
+      "seorang Full Stack Developer",
+      "seorang Penulis",
+      "seorang Excel Specialist",
+      "seorang Admin Gudang"
+    ],
+    "unselectedProfession": "Anda belum memilih profesi yang ingin dilihat",
+    "selectProfession": "Pilih profesi",
+    "selectProffesionDialogTitle": "Profesi",
+    "selectProffesionDialogDescription": "Pilih profesi yang anda ingin ketahui"
+  },
+  "HomePage": {
+    "greetings": "Halo! Saya",
+    "aboutCta": "Tentang saya",
+    "downloadCvCta": "Unduh Cv"
+  },
+  "Navigation": {
+    "home": "Beranda",
+    "profile": "Profil",
+    "projects": "Proyek",
+    "contacts": "Kontak"
+  },
+  "NotFound": {
+    "notFoundAlert": "Oops! Halaman Tidak Ditemukan",
+    "notFoundMessage": "Sepertinya halaman yang kamu cari tidak tersedia atau telah dipindahkan.",
+    "notFoundCta": "Kembali ke Beranda"
+  },
+  "Profile": {
+    "shortOpening": "Profil Saya sebagai seorang",
+    "certificates": "🎓 Sertifikat",
+    "viewCertificates": "Lihat Sertifikat",
+    "professions": {
+      "fullstack-developer": {
+        "greetings": "Full Stack Developer dengan pengalaman dalam pengembangan aplikasi berbasis web menggunakan JavaScript, TypeScript, React, Node.js, dan database (SQL, No SQL). Memiliki pemahaman tentang sistem administrasi digital, serta terbiasa bekerja dengan ERP dan data management. Mampu mengembangkan aplikasi dari sisi frontend hingga backend untuk meningkatkan efisiensi bisnis."
+      },
+      "writer": {
+        "greetings": "Penulis dan penerjemah berpengalaman dalam kepenulisan kreatif, jurnalistik, dan teknis. Memiliki latar belakang akademik dalam penerjemahan Arab-Indonesia serta keahlian dalam menulis artikel berbasis riset dan konten digital. Terbiasa menerapkan SEO dan copywriting untuk meningkatkan jangkauan dan keterbacaan konten."
+      },
+      "video-editor": {
+        "greetings": "Saya memiliki minat yang besar dalam video editing dan telah mempelajari berbagai teknik serta fitur dalam proses editing. Dengan pemahaman tentang prinsip dasar dan penggunaan software editing, saya terus mengasah keterampilan saya untuk menghasilkan konten visual yang menarik."
+      },
+      "staff-administration": {
+        "greetings": "Lulusan Penerjemahan Arab Indonesia yang antusias di bidang pengelolaan data dan administrasi. Keahlian saya meliputi manajemen inventaris, penggunaan ERP, dan keakuratan data melalui Microsoft Excel. Berhasil menyediakan data yang akurat untuk PPIC dan juga bagian Purchasing."
+      }
+    }
+  },
+  "Projects": {
+    "shortGreetings": "Project saya sebagai seorang",
+    "seeArticle": "Lihat Artikel"
+  }
+}

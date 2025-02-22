@@ -1,0 +1,63 @@
+{
+  "Contact": {
+    "ourContact": "Our Contacts",
+    "sendViaEmail": "Send via Email",
+    "sendViaWhatsApp": "Send via WhatsApp",
+    "viaEmail": "Via Email",
+    "viaWhatsApp": "Via WhatsApp",
+    "messageEmail": "Email Leter",
+    "messageWhatsApp": "WhatsApp Letter",
+    "bodyPlaceholder": "Write your letter here..."
+  },
+  "General": {
+    "professions": [
+      "a Full Stack Developer",
+      "a Writer",
+      "an Excel Specialist",
+      "a Warehouse Admin"
+    ],
+    "unselectedProfession": "You haven't chosen a profession you want to see",
+    "selectProfession": "Select Profession",
+    "selectProffesionDialogTitle": "Profession",
+    "selectProffesionDialogDescription": "Choose a profession you want to see"
+  },
+  "HomePage": {
+    "greetings": "Hello! I am",
+    "aboutCta": "About me",
+    "downloadCvCta": "Download Cv"
+  },
+  "Navigation": {
+    "home": "Home",
+    "profile": "Profile",
+    "projects": "Projects",
+    "contacts": "Contacts"
+  },
+  "NotFound": {
+    "notFoundAlert": "Oops! Page not found",
+    "notFoundMessage": "The page you're looking for is no longer available or be moved",
+    "notFoundCta": "Back to home"
+  },
+  "Profile": {
+    "shortOpening": "My profile as a",
+    "certificates": "🎓 Certificates",
+    "viewCertificates": "View Certificate",
+    "professions": {
+      "fullstack-developer": {
+        "greetings": "Full Stack Developer with experience in web application development using JavaScript, TypeScript, React, Node.js, and databases (SQL, NoSQL). Proficient in digital administration systems and accustomed to working with ERP and data management. Capable of developing applications from frontend to backend to improve business efficiency."
+      },
+      "writer": {
+        "greetings": "Experienced writer and translator specializing in creative, journalistic, and technical writing. Strong academic background in Arabic-Indonesian translation with expertise in research-based articles and digital content writing. Skilled in implementing SEO and copywriting techniques to enhance content reach and readability."
+      },
+      "video-editor": {
+        "greetings": "I have a strong interest in video editing and have learned various techniques and features in the editing process. With a solid understanding of the basics and the use of editing software, I continue to refine my skills to produce compelling visual content."
+      },
+      "staff-administration": {
+        "greetings": "A highly motivated Arabic-Indonesian Translation graduate with strong expertise in data management and administration. Proficient in inventory management, ERP systems, and Microsoft Excel, ensuring accurate data processing. Successfully provided precise data for PPIC and Purchasing departments to support operational efficiency."
+      }
+    }
+  },
+  "Projects": {
+    "shortGreetings": "My projects as a",
+    "seeArticle": "View Article"
+  }
+}
