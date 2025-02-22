@@ -7,7 +7,7 @@ export const projects: GenType.CardImage[] = [
       en: "Writing a management inventory data. Here, there is a column that change automaticalu when stock exceeds the minimum limit or the stock is running out. There is a bar chart for data visulisation, also a diagram chart for knowing how much a proportion stock per category. Here, also there is a Pivot Table.",
     },
     imageSrc: "/images/Projects/wha_inventory-managemet.png",
-    imageAlt: "Inventory Management",
+    imageAlt: "Inventory Management Image",
     imageCapt: "Inventory Management",
     group: [
       "Conditional Formating",
