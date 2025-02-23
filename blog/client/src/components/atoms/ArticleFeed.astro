@@ -1,10 +1,11 @@
 ---
+import { Image } from "astro:assets";
 export interface Props {
   title: string;
   description: string;
   imageSrc: string;
   imageAlt?: string;
-  label: string;
+  category: string;
   author: string;
   date: string;
   link: string;
@@ -15,8 +16,8 @@ const {
   description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam natus iusto nisi et? Recusandae unde cupiditate nisi itaque eveniet quisquam aliquid, voluptatibus vel quae illum commodi veritatis aperiam laborum ut facilis eaque, quia saepe totam tempora numquam dolores voluptatum. Ipsa aperiam dolores magnam maxime in cum quaerat dolor tempore doloribus.",
   imageSrc = "blog-placeholder-1.jpg",
   imageAlt = "Gambar ilustrasi artikel",
-  label,
-  author,
+  category,
+  author = "Anonymous",
   date,
   link = "#",
 } = Astro.props;
@@ -24,14 +25,25 @@ const {
 
 <div class="container-article">
   <figure class="image-container">
-    <img class="image-source" src={imageSrc} alt={imageAlt} />
-    <figcaption class="label">{label}</figcaption>
+    <a href={`/blog/${link}`}>
+      <Image
+        width={240}
+        height={240}
+        class="image-source"
+        src={imageSrc}
+        alt={imageAlt}
+      />
+      <!-- <img class="image-source" src={imageSrc} alt={imageAlt} /> -->
+      <figcaption class="label">{category}</figcaption>
+    </a>
   </figure>
 
   <div class="identity-container">
     <h2>
-      <a href={link} class="title" aria-label={`Baca artikel berjudul ${title}`}
-        >{title}</a
+      <a
+        href={`/blog/${link}`}
+        class="title"
+        aria-label={`Baca artikel berjudul ${title}`}>{title}</a
       >
     </h2>
 
