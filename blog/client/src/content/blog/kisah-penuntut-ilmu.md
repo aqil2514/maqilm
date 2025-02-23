@@ -7,7 +7,7 @@ tags: ["Kisah Inspiratif", "Menuntut Ilmu", "Islam"]
 category: "Islami"
 ---
 
-## **Kisah Seorang Penuntut Ilmu**
+#### **Kisah Seorang Penuntut Ilmu**
 
 Pada suatu hari, ada seorang pemuda yang pergi ke kota sebelah dengan niatnya untuk menuntut ilmu. Semua persiapan, mulai dari bekal, pakaian, dan perlengkapan lainnya, telah ia siapkan untuk perjalanan jauh ke pulau sebelah demi mencari ilmu.
 

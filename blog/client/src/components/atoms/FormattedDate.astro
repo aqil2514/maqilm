@@ -6,9 +6,10 @@ interface Props {
 const { date } = Astro.props;
 ---
 
+<!-- TODO : Nanti ini ubah agar bisa dipakek element time yang dari home -->
 <time datetime={date.toISOString()}>
 	{
-		date.toLocaleDateString('en-us', {
+		date.toLocaleDateString('id-ID', {
 			year: 'numeric',
 			month: 'short',
 			day: 'numeric',

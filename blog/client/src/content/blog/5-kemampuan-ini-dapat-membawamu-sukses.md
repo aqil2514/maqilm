@@ -8,7 +8,7 @@ tags: ["Kisah Inspiratif", "Menuntut Ilmu", "Islam"]
 category: "Worklife"
 ---
 
-# Halo Gangs! Gimana Kabarnya?
+### Halo Gangs! Gimana Kabarnya?
 
 Baik-baik ajah, kan? Kali ini, kita akan membahas tentang **kemampuan-kemampuan apa aja sih yang dapat membuat kita sukses di usia muda**. Oke, kita langsung aja yuk menuju pembahasannya!
 
