@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+  alt?: string;
+  src?: string;
+  label?: string;
+  title?: string;
+  pubDate?: Date;
+  author?: string;
+}
+
+const { alt, author, label, pubDate, src, title } = Astro.props;
+---
+
+<a href="#">
+  <figure>
+    <Image
+      inferSize
+      alt="Gambar tidak ditemukan"
+      src="https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740290605/blogs/photo-1681913660988-e19d75e8c2dc_nyjpyt.jpg"
+    />
+    <div>
+      <p>Label</p>
+      <p>Judul Artikel</p>
+      <p>Penulis - <span>Terbit</span></p>
+    </div>
+  </figure>
+</a>
+
+<style>
+  figure {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 1rem;
+    height: 100%;
+  }
+
+  figure::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background: linear-gradient(45deg, #84e88f, #045500);
+    z-index: 1;
+  }
+
+  figure:hover img {
+    transform: scale(1.1);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    transition: 200ms;
+  }
+
+  div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 2;
+    line-height: 0.3;
+  }
+
+  p:first-child {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+  }
+
+  p:nth-child(2) {
+    color: #fff;
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  p:last-child {
+    color: #fff;
+    font-size: medium;
+  }
+</style>

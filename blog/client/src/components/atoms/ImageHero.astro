@@ -14,7 +14,9 @@ const { heroImage, pubDate, title, updatedDate } = Astro.props;
 
 <div class="hero-image">
   <div>
-    Write on : <FormattedDate date={pubDate} />
+    <p class="write-on">
+      Write on : <FormattedDate date={pubDate} />
+    </p>
     {
       updatedDate && (
         <div class="last-updated-on">
@@ -27,9 +29,15 @@ const { heroImage, pubDate, title, updatedDate } = Astro.props;
 </div>
 
 <style>
+  .write-on{
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
   .hero-image {
     width: 100%;
   }
+
   .hero-image img {
     display: block;
     margin: 0 auto;

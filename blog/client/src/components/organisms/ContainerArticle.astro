@@ -1,16 +1,17 @@
-<div class="prose">
+<article class="prose">
   <slot />
-</div>
+</article>
 
 <style>
   .prose {
     width: 720px;
     max-width: calc(100% - 2em);
-    margin: auto;
-    padding: 1em;
+    margin: 4rem 0;
+    padding: 2rem;
     color: rgb(var(--gray-dark));
+    background-color: white;
   }
-  
+
   @media (max-width: 720px) {
     .prose h1 {
       font-size: 2rem;

@@ -36,11 +36,21 @@ const {
         width: calc(100% - 2em);
         max-width: 100%;
         margin: 0;
+        display: grid;
+        grid-template-columns: 5% auto 30%;
+      }
+
+      .title{
+        font-size: 2rem;
       }
 
       @media (max-width:720px) {
         .title{
           font-size: 2rem;
+        }
+        main{
+          width: 100%;
+          display: block;
         }
       }
     </style>
@@ -49,7 +59,7 @@ const {
   <body>
     <Header />
     <main>
-      <article>
+      <div></div>
         <ContainerArticle>
           <h1 class="title">{title}</h1>
 
@@ -64,7 +74,7 @@ const {
 
           <slot />
         </ContainerArticle>
-      </article>
+      <section></section>
     </main>
     <Footer />
   </body>

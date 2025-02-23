@@ -1,0 +1,42 @@
+---
+import ImageHomeCarouselMain from "../atoms/ImageHomeCarouselMain.astro";
+import ImageHomeCarouselSecond from "../atoms/ImageHomeCarouselSecond.astro";
+---
+
+<div class="container">
+  <ImageHomeCarouselMain />
+  <div>
+    <ImageHomeCarouselSecond />
+    <ImageHomeCarouselSecond />
+  </div>
+
+  <style>
+    .container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 3rem 2rem;
+      gap: 1rem;
+    }
+
+    .container div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 95%;
+      gap: 1rem;
+    }
+
+    @media (max-width: 876px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+
+      .container div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
+</div>

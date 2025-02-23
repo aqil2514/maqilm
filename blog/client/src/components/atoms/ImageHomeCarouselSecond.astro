@@ -1,0 +1,109 @@
+---
+import { Image } from "astro:assets";
+---
+
+<figure>
+  <a href="#">
+    <Image
+      inferSize
+      alt="Gambar tidak ditemukan"
+      src="https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740290605/blogs/photo-1681913660988-e19d75e8c2dc_nyjpyt.jpg"
+    />
+  </a>
+  <a href="#">
+    <figcaption>Judul Artikel</figcaption>
+  </a>
+  <p class="description">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam,
+    perspiciatis. Labore beatae explicabo odio omnis recusandae nisi autem rerum
+    assumenda, nemo suscipit eum corporis quae veritatis placeat distinctio.
+    Esse veniam, ullam, consequatur maiores laboriosam provident quisquam,
+    ratione natus aut maxime illo explicabo quibusdam. Incidunt exercitationem
+    nemo facilis, magni cumque eligendi.
+  </p>
+  <p class="date">Tanggal</p>
+  <a href="#">
+    <button class="read-more">Lanjut Baca </button>
+  </a>
+</figure>
+
+<style>
+  figure {
+    background-color: white;
+    height: 100%;
+    max-height: 460px;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 100%;
+  }
+
+  img {
+    transition: 200ms;
+  }
+
+  img:hover {
+    filter: brightness(110%);
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    transition: 200ms;
+    font-weight: bold;
+  }
+
+  a:hover {
+    color: #08349b;
+  }
+
+  .description {
+    display: -webkit-box;
+    text-align: justify;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    font-size: large;
+    overflow: hidden;
+  }
+
+  .date {
+    font-size: medium;
+    color: #aaa8a8;
+  }
+
+  .read-more {
+    display: inline-block;
+    background-color: #3b82f6; /* Warna biru */
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      transform 0.2s ease;
+  }
+
+  .read-more:hover {
+    background-color: #2563eb; /* Warna biru lebih gelap saat hover */
+    transform: scale(1.05);
+  }
+
+  .read-more:active {
+    background-color: #1d4ed8;
+    transform: scale(1);
+  }
+
+  @media (max-width: 876px) {
+    figure{
+        height: auto;
+        width: auto;
+    }
+
+    .read-more {
+      display: none;
+    }
+  }
+</style>
