@@ -15,8 +15,7 @@ Baik-baik ajah, kan? Kali ini, kita akan membahas tentang **kemampuan-kemampuan 
 ## 1. Public Speaking
 
 ![Public Speaking Image](https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740290375/blogs/Public_Speaking_fuoiaa.png)
-
- <figcaption style="font-size: 14px; color: gray; margin-top: -35px; font-style: italic;">
+ <figcaption>
     Public Speaking: Kunci untuk menarik perhatian audiens. (Sumber : Dokumentasi Pribadi)
   </figcaption>
 
@@ -34,7 +33,8 @@ Jika kamu memiliki kemampuan ini, maka selamat! Kamu punya peluang besar untuk b
 ## 2. Akting
 
 ![Akting Image](https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740290414/blogs/Akting_ugx1fj.png)
-<figcaption style="font-size: 14px; color: gray; margin-top: -35px; font-style: italic;">
+
+<figcaption>
     Akting: Mainkan peran muka dua. (Sumber : Dokumentasi Pribadi)
   </figcaption>
 
@@ -53,7 +53,8 @@ Kalau belum bisa ikut audisi, **mulai dari yang sederhana dulu:**
 ## 3. Mengajar
 
 ![Mengajar Image](https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740290430/blogs/IMG-20170530-WA0017_tpzwgf.jpg)
-<figcaption style="font-size: 14px; color: gray; margin-top: -35px; font-style: italic;">
+
+<figcaption>
     Mengajar: Ilmu manfaat, dompet lebat. (Sumber : Dokumentasi Pribadi)
   </figcaption>
 
@@ -66,7 +67,8 @@ Mengajar adalah **kemampuan yang penting banget**! Kenapa? Karena dengan ini, ka
 ## 4. Video Making 🎥
 
 ![Video Making Image](https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740290445/blogs/Edit_video_katsak.png)
-<figcaption style="font-size: 14px; color: gray; margin-top: -35px; font-style: italic;">
+
+<figcaption>
     Video Making: Jadi content creator. (Sumber : Dokumentasi Pribadi)
   </figcaption>
 
@@ -84,7 +86,8 @@ Jadi, kalau kamu punya **bakat editing & kreativitas**, jangan ragu untuk berkar
 ## 5. Menulis ✍️
 
 ![Menulis Image](https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740290461/blogs/Screenshot_2018-04-24-21-20-41_nmn3fm.png)
-<figcaption style="font-size: 14px; color: gray; margin-top: -35px; font-style: italic;">
+
+<figcaption>
     Menulis: Kerja di mana saja. (Sumber : Dokumentasi Pribadi)
   </figcaption>
 

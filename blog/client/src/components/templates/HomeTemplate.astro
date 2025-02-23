@@ -8,18 +8,37 @@ import ImageHeroCarousel from "../molecules/ImageHeroCarousel.astro";
   <div class="grid-container">
     <div></div>
     <HomeFeed />
-    <sidebar></sidebar>
+    <div class="sidebar">
+      <div>Sidebar 1</div>
+      <div>Sidebar 2</div>
+    </div>
   </div>
 </main>
 
 <style>
   main {
     padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .sidebar{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .sidebar div{
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
   }
 
   .grid-container {
     display: grid;
     grid-template-columns: 5% auto 30%;
+    gap: 1rem;
   }
 
   @media (max-width: 720px) {
