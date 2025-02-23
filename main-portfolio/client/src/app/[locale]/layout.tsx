@@ -91,7 +91,7 @@ export default async function RootLayout({
           {children}
           <Toaster />
           <Footer />
-          <GoogleAnalytics gaId="G-LQDFHMLYYD" />
+          <GoogleAnalytics gaId="G-Z1L88CZ8W4" />
         </NextIntlClientProvider>
       </body>
     </html>
