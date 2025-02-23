@@ -335,6 +335,13 @@ export const newIcons: Record<string, GenType.IconSkill[]> = {
       src: "/images/Icons/full-stack-developer/fe_vue.png",
       category: FullStackCategoryEnums.FrontEnd,
     },
+    {
+      id: "fe_astrojs",
+      alt: "Astro.Js Skill",
+      name: "Astro.Js",
+      src: "/images/Icons/full-stack-developer/fe_astrojs.png",
+      category: FullStackCategoryEnums.FrontEnd,
+    },
   ],
   [FullStackCategoryEnums.StateManagement]: [
     {

@@ -93,4 +93,33 @@ export const projects: GenType.CardImage[] = [
     },
     repoLink: "https://github.com/aqil2514/kantin-sukawangi",
   },
+  {
+    id: "fsd-blog",
+    name: "Aqil's Blog",
+    desc: {
+      id: "Situs pribadi saya yang dibuat menggunakan Astro.js, di mana saya menulis tentang teknologi, pengembangan diri, dan kehidupan sehari-hari.",
+      en: "My personal site built with Astro.js, where I write about technology, self-development, and everyday life.",
+    },
+    imageSrc: "/images/Projects/fsd-blog.png",
+    imageAlt: "Aqil's Blog",
+    imageCapt: "Aqil's Blog",
+    group: [
+      "Astro.js",
+      "Tailwind CSS",
+      "MDX",
+      "RSS",
+      "Sitemap",
+      "Vercel",
+    ],
+    ctaText: {
+      en: "Visit the Blog",
+      id: "Kunjungi Blog",
+    },
+    ctaLink: "https://blog.maqilm.site/",
+    repoText: {
+      en: "Source Code",
+      id: "Source Code",
+    },
+    repoLink: "https://github.com/aqil2514/maqilm/tree/main/blog",
+  },
 ];
