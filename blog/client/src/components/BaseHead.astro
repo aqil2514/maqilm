@@ -3,6 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import { SITE_TITLE } from '../consts';
+import GoogleAnalytic from './GoogleAnalytic.astro';
 
 interface Props {
 	title: string;
@@ -57,3 +58,5 @@ const { title, description, image = '/blog-placeholder-1.jpg', author, tags } = 
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<GoogleAnalytic id="G-E74R5R8G6Q" />
