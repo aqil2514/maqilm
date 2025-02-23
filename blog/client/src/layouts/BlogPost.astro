@@ -33,24 +33,17 @@ const {
     />
     <style>
       main {
-        width: calc(100% - 2em);
         max-width: 100%;
         margin: 0;
         display: grid;
         grid-template-columns: 5% auto 30%;
       }
 
-      .title{
-        font-size: 2rem;
-      }
-
-      @media (max-width:720px) {
-        .title{
-          font-size: 2rem;
-        }
-        main{
+      @media (max-width: 720px) {
+        main {
           width: 100%;
           display: block;
+          padding: 0 1rem;
         }
       }
     </style>
@@ -60,20 +53,20 @@ const {
     <Header />
     <main>
       <div></div>
-        <ContainerArticle>
-          <h1 class="title">{title}</h1>
+      <ContainerArticle>
+        <h1 class="title">{title}</h1>
 
-          <ImageHero
-            heroImage={heroImage}
-            pubDate={pubDate}
-            title={title}
-            updatedDate={updatedDate}
-          />
+        <ImageHero
+          heroImage={heroImage}
+          pubDate={pubDate}
+          title={title}
+          updatedDate={updatedDate}
+        />
 
-          <ArticleBlogMeta author={author} category={category} tags={tags} />
+        <ArticleBlogMeta author={author} category={category} tags={tags} />
 
-          <slot />
-        </ContainerArticle>
+        <slot />
+      </ContainerArticle>
       <section></section>
     </main>
     <Footer />
