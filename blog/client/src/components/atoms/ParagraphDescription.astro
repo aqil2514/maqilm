@@ -1,0 +1,32 @@
+---
+export interface Props {
+  description: string;
+}
+
+const { description } = Astro.props;
+---
+
+<p class="description">
+  {description}
+</p>
+
+<style>
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Maksimal 4 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: medium;
+    text-align: justify;
+    color: #555;
+    margin: 0 0 4px 0; /* Mengurangi jarak bawah */
+  }
+
+  @media (max-width: 720px) {
+    .description {
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+</style>

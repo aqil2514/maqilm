@@ -1,0 +1,70 @@
+---
+import Image from "astro/components/Image.astro";
+
+export interface Props {
+  link: string;
+  imageSrc: string;
+  imageAlt: string;
+  category: string;
+}
+
+const { link, category, imageAlt, imageSrc } = Astro.props;
+---
+
+<figure class="image-container">
+  <a href={`/blog/${link}`}>
+    <Image
+      width={240}
+      height={240}
+      class="image-source"
+      src={imageSrc}
+      alt={imageAlt}
+    />
+    <figcaption class="label">{category}</figcaption>
+  </a>
+</figure>
+
+<style>
+  .image-container {
+    position: relative;
+    left: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 90%;
+  }
+
+  .image-source {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 200ms ease-in-out;
+  }
+
+  .image-container:hover .image-source {
+    transform: scale(1.1);
+  }
+
+  .label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 720px) {
+    .image-container {
+      width: 100%;
+      margin: 0;
+      text-align: center; /* Untuk memastikan gambar tetap rata tengah */
+    }
+
+    .image-source {
+      display: block;
+      margin: 0 auto; /* Menyamakan posisi agar tidak miring */
+    }
+  }
+</style>

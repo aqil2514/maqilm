@@ -1,0 +1,65 @@
+---
+import ImageHome from "../atoms/ImageHome.astro";
+import LinkArticle from "../atoms/LinkArticle.astro";
+import ParagraphDescription from "../atoms/ParagraphDescription.astro";
+import ParagraphAuthorHome from "../atoms/ParagraphAuthorHome.astro";
+export interface Props {
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt?: string;
+  category: string;
+  author: string;
+  date: string;
+  link: string;
+}
+
+const {
+  title,
+  description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam natus iusto nisi et? Recusandae unde cupiditate nisi itaque eveniet quisquam aliquid, voluptatibus vel quae illum commodi veritatis aperiam laborum ut facilis eaque, quia saepe totam tempora numquam dolores voluptatum. Ipsa aperiam dolores magnam maxime in cum quaerat dolor tempore doloribus.",
+  imageSrc = "blog-placeholder-1.jpg",
+  imageAlt = "Gambar ilustrasi artikel",
+  category,
+  author = "Anonymous",
+  date,
+  link = "#",
+} = Astro.props;
+---
+
+<div class="container-article">
+  <ImageHome
+    link={link}
+    category={category}
+    imageAlt={imageAlt}
+    imageSrc={imageSrc}
+  />
+
+  <div class="identity-container">
+    <LinkArticle link={link} title={title} />
+
+    <ParagraphDescription description={description} />
+
+    <ParagraphAuthorHome author={author} date={date} />
+  </div>
+
+  <style>
+    .container-article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 1rem; /* Tambahkan jarak antar elemen */
+    }
+
+    
+    .identity-container {
+      max-width: 100%;
+      padding-right: 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .container-article {
+        grid-template-columns: 1fr; /* Jadi satu kolom di layar kecil */
+      }
+    }
+  </style>
+</div>

@@ -1,0 +1,37 @@
+---
+export interface Props {
+  link: string;
+  title: string;
+}
+const { link, title } = Astro.props;
+---
+
+<a
+  href={`/blog/${link}`}
+  aria-label={`Baca artikel berjudul ${title}`}
+>
+
+  <h2 class="title">
+    {title}
+  </h2>
+
+</a>
+
+<style>
+    .title {
+    font-size: 1.3rem; /* Ukuran lebih kecil agar lebih proporsional */
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 0 0 4px 0; /* Mengatur jarak bawah */
+    transition: 200ms;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  .title:hover {
+    color: #3b82f6;
+  }
+</style>

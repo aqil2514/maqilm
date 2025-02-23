@@ -1,0 +1,35 @@
+---
+export interface Props {
+  author: string;
+  date: string;
+}
+
+const { author, date } = Astro.props;
+---
+
+<p class="author">
+  <span aria-label="Penulis artikel">{author}</span> |
+  <time datetime={date} aria-label="Tanggal publikasi artikel">
+    {
+      new Date(date).toLocaleDateString("id-ID", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      })
+    }
+  </time>
+</p>
+
+<style>
+  .author,
+  .date {
+    display: inline;
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0; /* Reset margin */
+  }
+
+  .author {
+    margin-right: 4px; /* Memberi sedikit jarak antara author dan date */
+  }
+</style>

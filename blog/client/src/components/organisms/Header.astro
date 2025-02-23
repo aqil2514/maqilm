@@ -1,7 +1,7 @@
 ---
 import "@fontsource-variable/montserrat";
 
-import HeaderLink from "../atoms/HeaderLink.astro";
+import LinkHeader from "../atoms/LinkHeader.astro";
 import { SITE_TITLE } from "../../consts";
 ---
 
@@ -11,9 +11,9 @@ import { SITE_TITLE } from "../../consts";
       <a href="/">{SITE_TITLE}</a>
     </div>
     <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
+      <LinkHeader href="/">Home</LinkHeader>
+      <LinkHeader href="/blog">Blog</LinkHeader>
+      <LinkHeader href="/about">About</LinkHeader>
     </div>
   </nav>
 </header>
