@@ -18,6 +18,7 @@ const {
   author = "Anonymous",
   tags,
   category,
+  captHeroImage
 } = Astro.props;
 ---
 
@@ -90,6 +91,7 @@ const {
             pubDate={pubDate}
             title={title}
             updatedDate={updatedDate}
+            captHeroImage={captHeroImage}
           />
 
           <ArticleBlogMeta author={author} category={category} tags={tags} />

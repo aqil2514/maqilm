@@ -3,6 +3,8 @@ title: "Kisah Seorang Penuntut Ilmu"
 description: "Sebuah kisah inspiratif tentang seorang pemuda yang mengalami ujian dalam perjalanannya menuntut ilmu."
 author: "Muhamad Aqil Maulana"
 pubDate: "2019-02-22"
+heroImage: "https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740316590/penuntut-ilmu.jpg"
+captHeroImage : "Penuntut ilmu (Photo by Masjid MABA on Unsplash)"
 tags: ["Kisah Inspiratif", "Menuntut Ilmu", "Islam"]
 category: "Islami"
 ---

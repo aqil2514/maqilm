@@ -1,13 +1,48 @@
 ---
 import ImageHomeCarouselMain from "../atoms/ImageHomeCarouselMain.astro";
 import ImageHomeCarouselSecond from "../atoms/ImageHomeCarouselSecond.astro";
+
+import { getCollection } from "astro:content";
+
+const collections = await getCollection("blog");
+//@ts-ignore
+collections.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
+
+const articles = collections.map((article) => ({
+  title: article.data.title,
+  description: article.data.description,
+  imageSrc: article.data.heroImage || "/notfound-image.png",
+  category: article.data.category || "No Category",
+  author: article.data.author || "Anonymous",
+  date: article.data.pubDate.toISOString(),
+  link: article.id,
+}));
+
+const [latestPost, ...otherPosts] = articles.slice(0, 3);
 ---
 
 <div class="container">
-  <ImageHomeCarouselMain />
+  <ImageHomeCarouselMain
+    alt={latestPost.title}
+    link={`/blog/${latestPost.link}`}
+    author={latestPost.author}
+    label={latestPost.category}
+    pubDate={new Date(latestPost.date)}
+    src={latestPost.imageSrc}
+    title={latestPost.title}
+  />
   <div>
-    <ImageHomeCarouselSecond />
-    <ImageHomeCarouselSecond />
+    {
+      otherPosts.map((post) => (
+        <ImageHomeCarouselSecond
+          date={post.date}
+          description={post.description}
+          imageSrc={post.imageSrc}
+          link={`/blog/${post.link}`}
+          title={post.title}
+        />
+      ))
+    }
   </div>
 
   <style>
