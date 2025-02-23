@@ -3,10 +3,14 @@ import ArticleFeed from "../atoms/ArticleFeed.astro";
 import { getCollection } from "astro:content";
 
 const collections = await getCollection("blog");
-const test = collections.map((article) => ({
+
+//@ts-ignore
+collections.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
+
+const articles = collections.map((article) => ({
   title: article.data.title,
   description: article.data.description,
-  imageSrc: article.data.heroImage || "/blog-placeholder-1.jpg", 
+  imageSrc: article.data.heroImage || "/notfound-image.png", 
   category: article.data.category || "No Category",
   author: article.data.author || "Anonymous", 
   date: article.data.pubDate.toISOString(), 
@@ -15,6 +19,18 @@ const test = collections.map((article) => ({
 ---
 
 <div>
-  <h1>Article</h1>
-  {test.map((article) => <ArticleFeed {...article} />)}
+  <h1>Artikel</h1>
+  {articles.map((article) => <ArticleFeed {...article} />)}
 </div>
+
+<style>
+  div{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  div h1{
+    text-decoration: underline;
+    cursor: default;
+  }
+</style>

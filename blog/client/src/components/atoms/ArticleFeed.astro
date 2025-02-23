@@ -33,7 +33,6 @@ const {
         src={imageSrc}
         alt={imageAlt}
       />
-      <!-- <img class="image-source" src={imageSrc} alt={imageAlt} /> -->
       <figcaption class="label">{category}</figcaption>
     </a>
   </figure>
@@ -53,9 +52,15 @@ const {
 
     <p class="author">
       <span aria-label="Penulis artikel">{author}</span> |
-      <time datetime="2025-02-22" aria-label="Tanggal publikasi artikel"
-        >{date}</time
-      >
+      <time datetime={date} aria-label="Tanggal publikasi artikel">
+        {
+          new Date(date).toLocaleDateString("id-ID", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          })
+        }
+      </time>
     </p>
   </div>
 </div>
@@ -71,6 +76,16 @@ const {
   @media (max-width: 768px) {
     .container-article {
       grid-template-columns: 1fr; /* Jadi satu kolom di layar kecil */
+    }
+    .image-container {
+      width: 100%;
+      margin: 0;
+      text-align: center; /* Untuk memastikan gambar tetap rata tengah */
+    }
+
+    .image-source {
+      display: block;
+      margin: 0 auto; /* Menyamakan posisi agar tidak miring */
     }
   }
 
@@ -143,5 +158,12 @@ const {
 
   .author {
     margin-right: 4px; /* Memberi sedikit jarak antara author dan date */
+  }
+
+  @media (max-width: 720px) {
+    .description {
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
   }
 </style>
