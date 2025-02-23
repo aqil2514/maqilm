@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon/components";
+
+const today = new Date();
+---
+
+<footer>
+  &copy; {today.getFullYear()} Aqil's Blog. All rights reserved.
+  <div class="social-links">
+	<a href="https://github.com/aqil2514/maqilm/tree/main/blog/client" target="_blank" title="Source Code">
+	<Icon name="octicon:mark-github-16" size={36} />
+	</a>
+	<a href="https://cv.maqilm.site" target="_blank" title="Portofolio">
+	<Icon name="octicon:feed-person-16" size={36} />
+	</a>
+  </div>
+</footer>
+<style>
+  footer {
+    padding: 2em 1em 6em 1em;
+    background: linear-gradient(var(--gray-gradient)) no-repeat;
+    color: rgb(var(--gray));
+    text-align: center;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+  }
+  .social-links a {
+    text-decoration: none;
+    color: rgb(var(--gray));
+  }
+  .social-links a:hover {
+    color: rgb(var(--gray-dark));
+  }
+</style>

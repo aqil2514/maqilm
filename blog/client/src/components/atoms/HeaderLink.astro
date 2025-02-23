@@ -1,4 +1,6 @@
 ---
+import "@fontsource-variable/montserrat";
+
 import type { HTMLAttributes } from 'astro/types';
 
 type Props = HTMLAttributes<'a'>;
@@ -12,13 +14,21 @@ const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
 </a>
+
 <style>
 	a {
 		display: inline-block;
 		text-decoration: none;
+		color: #0f172a;
+		transition-duration: 100ms;
+		font-family: "Montserrat Variable", Courier, monospace;
 	}
 	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
+		font-weight: 600;
+		color: #3b82f6;
+	}
+	a:hover{
+		font-weight: 600;
+		color: #3b82f6;
 	}
 </style>

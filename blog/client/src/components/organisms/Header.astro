@@ -1,0 +1,65 @@
+---
+import "@fontsource-variable/montserrat";
+
+import HeaderLink from "../atoms/HeaderLink.astro";
+import { SITE_TITLE } from "../../consts";
+---
+
+<header>
+  <nav>
+    <div class="site-title">
+      <a href="/">{SITE_TITLE}</a>
+    </div>
+    <div class="internal-links">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    width: 100%;
+    height: 4rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  nav {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-title a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: "Montserrat Variable", sans-serif;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .internal-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .internal-links a {
+    font-family: "Montserrat Variable", sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #555;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .internal-links a:hover {
+    color: #000;
+    font-weight: bold;
+  }
+</style>
