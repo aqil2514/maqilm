@@ -1,0 +1,135 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  imageSrc: string;
+  imageAlt?: string;
+  label: string;
+  author: string;
+  date: string;
+  link: string;
+}
+
+const {
+  title,
+  description = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam natus iusto nisi et? Recusandae unde cupiditate nisi itaque eveniet quisquam aliquid, voluptatibus vel quae illum commodi veritatis aperiam laborum ut facilis eaque, quia saepe totam tempora numquam dolores voluptatum. Ipsa aperiam dolores magnam maxime in cum quaerat dolor tempore doloribus.",
+  imageSrc = "blog-placeholder-1.jpg",
+  imageAlt = "Gambar ilustrasi artikel",
+  label,
+  author,
+  date,
+  link = "#",
+} = Astro.props;
+---
+
+<div class="container-article">
+  <figure class="image-container">
+    <img class="image-source" src={imageSrc} alt={imageAlt} />
+    <figcaption class="label">{label}</figcaption>
+  </figure>
+
+  <div class="identity-container">
+    <h2>
+      <a href={link} class="title" aria-label={`Baca artikel berjudul ${title}`}
+        >{title}</a
+      >
+    </h2>
+
+    <p class="description">
+      {description}
+    </p>
+
+    <p class="author">
+      <span aria-label="Penulis artikel">{author}</span> |
+      <time datetime="2025-02-22" aria-label="Tanggal publikasi artikel"
+        >{date}</time
+      >
+    </p>
+  </div>
+</div>
+
+<style>
+  .container-article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem; /* Tambahkan jarak antar elemen */
+  }
+
+  @media (max-width: 768px) {
+    .container-article {
+      grid-template-columns: 1fr; /* Jadi satu kolom di layar kecil */
+    }
+  }
+
+  .image-container {
+    position: relative;
+    left: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 90%;
+  }
+
+  .image-source {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 200ms ease-in-out;
+  }
+
+  .image-container:hover .image-source {
+    transform: scale(1.1);
+  }
+
+  .label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  .identity-container {
+    max-width: 100%;
+    padding-right: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.3rem; /* Ukuran lebih kecil agar lebih proporsional */
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 0 0 4px 0; /* Mengatur jarak bawah */
+  }
+
+  .title:hover {
+    color: #3b82f6;
+  }
+
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Maksimal 4 baris */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: medium;
+    text-align: justify;
+    color: #555;
+    margin: 0 0 4px 0; /* Mengurangi jarak bawah */
+  }
+
+  .author,
+  .date {
+    display: inline;
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0; /* Reset margin */
+  }
+
+  .author {
+    margin-right: 4px; /* Memberi sedikit jarak antara author dan date */
+  }
+</style>
