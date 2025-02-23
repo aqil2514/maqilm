@@ -111,6 +111,13 @@ const {date, description, imageSrc, link, title} = Astro.props
         width: auto;
     }
 
+    figcaption{
+      display : -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
     .read-more {
       display: none;
     }
