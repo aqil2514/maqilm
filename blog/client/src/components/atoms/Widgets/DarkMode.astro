@@ -7,38 +7,6 @@
   <button id="dark-mode-button" class="toggle-button light-button"></button>
 </section>
 
-<script>
-  import $ from "jquery";
-
-  $(() => {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme) {
-      $("body").attr("data-theme", savedTheme);
-      $("#dark-mode-button").toggleClass(
-        "light-button dark-button",
-        savedTheme === "dark"
-      );
-      $("#theme-announce").text(
-        savedTheme === "dark" ? "🌙 Dark Mode " : "☀️ Light Mode"
-      );
-    }
-
-    $("#dark-mode-button").on("click", function () {
-      $(this).toggleClass("light-button dark-button");
-      const newTheme =
-        $("body").attr("data-theme") === "dark" ? "light" : "dark";
-      $("body").attr("data-theme", newTheme);
-      localStorage.setItem("theme", newTheme);
-
-      // Handler untuk paragraph id theme-announce
-      $("#theme-announce").text(
-        newTheme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"
-      );
-    });
-  });
-</script>
-
 <style>
   :root {
     --highlight: #39ac4c;
@@ -82,3 +50,5 @@
     background-color: white;
   }
 </style>
+
+<script src="src/scripts/dark-mode.js" defer></script>
