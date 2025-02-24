@@ -1,0 +1,84 @@
+---
+
+---
+
+<section>
+  <p id="theme-announce"></p>
+  <button id="dark-mode-button" class="toggle-button light-button"></button>
+</section>
+
+<script>
+  import $ from "jquery";
+
+  $(() => {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+      $("body").attr("data-theme", savedTheme);
+      $("#dark-mode-button").toggleClass(
+        "light-button dark-button",
+        savedTheme === "dark"
+      );
+      $("#theme-announce").text(
+        savedTheme === "dark" ? "🌙 Dark Mode " : "☀️ Light Mode"
+      );
+    }
+
+    $("#dark-mode-button").on("click", function () {
+      $(this).toggleClass("light-button dark-button");
+      const newTheme =
+        $("body").attr("data-theme") === "dark" ? "light" : "dark";
+      $("body").attr("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+
+      // Handler untuk paragraph id theme-announce
+      $("#theme-announce").text(
+        newTheme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"
+      );
+    });
+  });
+</script>
+
+<style>
+  :root {
+    --highlight: #39ac4c;
+  }
+
+  .toggle-button {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .toggle-button::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 50%;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .light-button::after {
+    left: 3px;
+  }
+
+  /* Mode Gelap */
+  .dark-button {
+    background-color: var(--highlight);
+  }
+
+  .dark-button::after {
+    left: calc(100% - 28px);
+    background-color: white;
+  }
+</style>

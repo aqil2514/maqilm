@@ -1,0 +1,21 @@
+---
+import WidgetLatestPost from "../atoms/Widgets/LatestPost.astro";
+import WidgetCategories from "../atoms/Widgets/Categories.astro";
+---
+
+<aside class="sidebar">
+  <WidgetLatestPost />
+  <WidgetCategories />
+</aside>
+
+<style>
+  .sidebar {
+    background-color: white;
+  }
+
+  @media (max-width: 720px) {
+    .sidebar {
+      margin-top: 1rem;
+    }
+  }
+</style>

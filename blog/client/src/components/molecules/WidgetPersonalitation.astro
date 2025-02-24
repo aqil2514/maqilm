@@ -1,0 +1,19 @@
+---
+import WidgetDarkMode from "../atoms/Widgets/DarkMode.astro";
+---
+
+<aside class="sidebar">
+  <WidgetDarkMode />
+</aside>
+
+<style>
+  .sidebar {
+    background-color: white;
+  }
+
+  @media (max-width: 720px) {
+    .sidebar {
+      margin-top: 1rem;
+    }
+  }
+</style>
