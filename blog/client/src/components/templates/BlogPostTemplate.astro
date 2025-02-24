@@ -7,6 +7,8 @@ import ImageHero from "../atoms/ImageHero.astro";
 import ArticleBlogMeta from "../molecules/ArticleBlogMeta.astro";
 import Footer from "../organisms/Footer.astro";
 
+import {convertGoogleDriveUrl} from "../../utils";
+
 type Props = CollectionEntry<"blog">["data"];
 
 const {
@@ -20,6 +22,10 @@ const {
   category,
   captHeroImage
 } = Astro.props;
+
+const test = convertGoogleDriveUrl("https://drive.google.com/file/d/1XsYT-nlcoxkhSGONZbxpcwXYawoBKMnP/view?usp=drive_link")
+
+console.log(test)
 ---
 
 <html lang="en">
