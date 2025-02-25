@@ -2,11 +2,13 @@
 import { getCollection } from "astro:content";
 
 const collections = await getCollection("blog");
-const categories = [
+const categoriesSet = [
   ...new Set(
     collections.map((article) => article.data.category).filter(Boolean)
   ),
 ] as string[];
+
+const categories = categoriesSet.slice(0, 5);
 ---
 
 <section class="categories">
@@ -22,6 +24,8 @@ const categories = [
       ))
     }
   </ul>
+  <a href="/category">
+  Kategori Lainnya &gt;&gt;</a>
 </section>
 
 <style>

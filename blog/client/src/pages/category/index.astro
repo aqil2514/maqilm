@@ -1,0 +1,19 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Footer from "../../components/organisms/Footer.astro";
+import Header from "../../components/organisms/Header.astro";
+
+import CategoryTemplate from "../../components/templates/CategoryTemplate.astro";
+import { SITE_TITLE } from "../../consts";
+---
+
+<BaseHead
+  title={`Category | ${SITE_TITLE}`}
+  description="Halaman kumpulan kategori situs Aqil's Blog"
+/>
+
+<body>
+  <Header />
+  <CategoryTemplate />
+  <Footer />
+</body>

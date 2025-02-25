@@ -10,6 +10,7 @@ import Footer from "../organisms/Footer.astro";
 import { convertGoogleDriveUrl } from "../../utils";
 import WidgetNavigation from "../molecules/WidgetNavigation.astro";
 import WidgetPersonalization from "../molecules/WidgetPersonalization.astro";
+import Sidebar from "../organisms/Sidebar.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -109,8 +110,7 @@ console.log(test);
           <slot />
         </ContainerArticle>
         <div class="sidebar">
-          <WidgetNavigation />
-          <WidgetPersonalization />
+          <Sidebar />
         </div>
       </div>
     </main>

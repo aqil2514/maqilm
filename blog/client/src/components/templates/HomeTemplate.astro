@@ -1,6 +1,7 @@
 ---
 import HomeFeed from "../molecules/HomeFeed.astro";
 import ImageHeroCarousel from "../molecules/ImageHeroCarousel.astro";
+import Sidebar from "../organisms/Sidebar.astro"
 import WidgetNavigation from "../molecules/WidgetNavigation.astro";
 import WidgetPersonalitation from "../molecules/WidgetPersonalization.astro";
 ---
@@ -10,10 +11,7 @@ import WidgetPersonalitation from "../molecules/WidgetPersonalization.astro";
   <div class="grid-container">
     <div></div>
     <HomeFeed />
-    <div class="sidebar">
-      <WidgetNavigation />
-      <WidgetPersonalitation />
-    </div>
+    <Sidebar />
   </div>
 </main>
 
@@ -28,12 +26,6 @@ import WidgetPersonalitation from "../molecules/WidgetPersonalization.astro";
   .grid-container {
     display: grid;
     grid-template-columns: 5% auto 30%;
-    gap: 1rem;
-  }
-
-  .sidebar{
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
   }
 
