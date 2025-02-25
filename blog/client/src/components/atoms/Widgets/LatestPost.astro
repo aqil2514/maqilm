@@ -1,0 +1,52 @@
+---
+import { getCollection } from "astro:content";
+
+const collections = await getCollection("blog");
+
+// @ts-ignore
+const sortedArticles = collections.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
+
+const latestPosts = sortedArticles.slice(0, 5);
+---
+
+<section class="latest-posts">
+    <h2>Postingan Terbaru</h2>
+    <ul>
+      {latestPosts.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}`}>{post.data.title}</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <style>
+    .latest-posts {
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+  
+    .latest-posts h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .latest-posts ul {
+      list-style: disc;
+      padding-left: 1rem;
+    }
+  
+    .latest-posts li {
+      margin-bottom: 0.5rem;
+    }
+  
+    .latest-posts a {
+      text-decoration: none;
+      color: #000;
+    }
+  
+    .latest-posts a:hover {
+      text-decoration: underline;
+    }
+  </style>

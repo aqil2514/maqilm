@@ -1,0 +1,56 @@
+---
+import { getCollection } from "astro:content";
+
+const collections = await getCollection("blog");
+const categories = [
+  ...new Set(
+    collections.map((article) => article.data.category).filter(Boolean)
+  ),
+] as string[];
+---
+
+<section class="categories">
+  <h2>Kategori</h2>
+  <ul>
+    {
+      categories.map((category) => (
+        <li>
+          <a href={`/category/${category.toLowerCase().replace(/\s+/g, "-")}`}>
+            {category}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .categories {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+
+  .categories h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .categories ul {
+    list-style: disc;
+    padding-left: 1rem;
+  }
+
+  .categories li {
+    margin-bottom: 0.5rem;
+  }
+
+  .categories a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .categories a:hover {
+    text-decoration: underline;
+  }
+</style>
