@@ -12,6 +12,12 @@
     --highlight: #39ac4c;
   }
 
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .toggle-button {
     position: relative;
     width: 100px;
@@ -48,6 +54,13 @@
   .dark-button::after {
     left: calc(100% - 28px);
     background-color: white;
+  }
+
+  #theme-announce {
+    color: var(--primary-text);
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-weight: bold;
   }
 </style>
 

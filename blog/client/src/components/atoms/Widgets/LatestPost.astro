@@ -23,17 +23,19 @@ const latestPosts = sortedArticles.slice(0, 5);
   <style>
     .latest-posts {
       padding: 1rem;
-      background-color: #fff;
+      background-color: var(--primary-background);
       border-radius: 8px;
     }
   
     .latest-posts h2 {
       font-size: 1.2rem;
+      color: var(--primary-text);
       margin-bottom: 0.5rem;
     }
   
     .latest-posts ul {
       list-style: disc;
+      color: var(--primary-text);
       padding-left: 1rem;
     }
   
@@ -43,7 +45,7 @@ const latestPosts = sortedArticles.slice(0, 5);
   
     .latest-posts a {
       text-decoration: none;
-      color: #000;
+      color: var(--primary-text);
     }
   
     .latest-posts a:hover {

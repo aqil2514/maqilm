@@ -21,7 +21,7 @@ const { link, title } = Astro.props;
     .title {
     font-size: 1.3rem; /* Ukuran lebih kecil agar lebih proporsional */
     text-decoration: none;
-    color: black;
+    color: var(--link-primary);
     font-weight: bold;
     margin: 0 0 4px 0; /* Mengatur jarak bawah */
     transition: 200ms;
@@ -32,6 +32,6 @@ const { link, title } = Astro.props;
   }
 
   .title:hover {
-    color: #3b82f6;
+    color: var(--link-hover-2);
   }
 </style>

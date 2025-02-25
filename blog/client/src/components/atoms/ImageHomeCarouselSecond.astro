@@ -35,7 +35,7 @@ const {date, description, imageSrc, link, title} = Astro.props
 
 <style>
   figure {
-    background-color: white;
+    background-color: var(--primary-background);
     height: 100%;
     max-height: 460px;
     padding: 1rem;
@@ -55,14 +55,14 @@ const {date, description, imageSrc, link, title} = Astro.props
   }
 
   a {
-    color: black;
+    color: var(--link-primary);
     text-decoration: none;
     transition: 200ms;
     font-weight: bold;
   }
 
   a:hover {
-    color: #08349b;
+    color: var(--link-hover);
   }
 
   .description {
@@ -72,11 +72,12 @@ const {date, description, imageSrc, link, title} = Astro.props
     -webkit-box-orient: vertical;
     font-size: large;
     overflow: hidden;
+    color: var(--article-text)
   }
 
   .date {
     font-size: medium;
-    color: #aaa8a8;
+    color: var(--secondary-text);
   }
 
   .read-more {
