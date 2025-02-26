@@ -65,10 +65,7 @@ export const projects: GenType.CardImage[] = [
       "https://cdn.sanity.io/images/5jkamrnf/production/51c811ace947632358a140aa94c03c8e411f2047-1918x991.png",
     imageAlt: "Inventory Management",
     imageCapt: "Inventory Management",
-    group: [
-      "Data Management",
-      "Formula and Functions",
-    ],
+    group: ["Data Management", "Formula and Functions"],
     ctaText: {
       id: "Lihat Template",
       en: "View Template",
@@ -103,6 +100,7 @@ export const projects: GenType.CardImage[] = [
       en: "Download File",
       id: "Unduh File",
     },
+    slug: "https://blog.maqilm.site/blog/excel-project-absen-kerja",
   },
   {
     id: "es-vlookup",
