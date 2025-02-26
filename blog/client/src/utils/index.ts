@@ -1,14 +1,18 @@
-export function convertGoogleDriveUrl(url?: string) {
-  if (typeof url != "string") return;
+import type { InferEntrySchema, RenderedContent } from "astro:content";
 
-  const driveRegex =
-    /https?:\/\/drive\.google\.com\/file\/d\/([\w-]+)\/view\?.*/;
-  const match = url.match(driveRegex);
+interface Blog<T extends "blog" = "blog"> {
+  id: string;
+  body?: string;
+  collection: T;
+  data: InferEntrySchema<T>;
+  rendered?: RenderedContent;
+  filePath?: string;
+}
 
-  if (match) {
-    const fileId = match[1];
-    return `https://drive.usercontent.google.com/download?id=${fileId}`;
-  }
-
-  return;
+export function getContentCategories(collections: Blog[]) {
+  return [
+    ...new Set(
+      collections.map((article) => article.data.category).filter(Boolean)
+    ),
+  ] as string[];
 }

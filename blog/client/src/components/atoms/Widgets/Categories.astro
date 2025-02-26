@@ -1,12 +1,9 @@
 ---
 import { getCollection } from "astro:content";
+import { getContentCategories } from "../../../utils";
 
 const collections = await getCollection("blog");
-const categoriesSet = [
-  ...new Set(
-    collections.map((article) => article.data.category).filter(Boolean)
-  ),
-] as string[];
+const categoriesSet = getContentCategories(collections)
 
 const categories = categoriesSet.slice(0, 5);
 ---
