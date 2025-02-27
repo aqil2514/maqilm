@@ -11,7 +11,7 @@ const posts = collections.slice(0, 5);
     loop="true"
     pagination="true"
     navigation="true"
-    autoplay='{"delay": 3000}'
+    autoplay='{"delay": 3000, "pauseOnMouseEnter": true}'
   >
     {
       posts.map((post) => {
@@ -42,8 +42,8 @@ const posts = collections.slice(0, 5);
 
 <style>
   .hero {
-    height: 360px;
-    width: 960px;
+    width: 100%;
+    max-width: 1200px; /* Batasi ukuran maksimum */
     margin: 1rem auto 2rem;
     background-color: black;
     padding: 1rem;
@@ -66,7 +66,6 @@ const posts = collections.slice(0, 5);
     font-size: 1.5rem;
     color: white;
     padding: 1rem;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
@@ -84,35 +83,43 @@ const posts = collections.slice(0, 5);
 
   swiper-slide figure {
     width: 100%;
-    height: 100%;
+    max-width: 1000px; /* Maksimum ukuran konten */
     display: flex;
+    flex-wrap: wrap; /* Agar responsif di layar kecil */
     gap: 1rem;
     align-items: center;
     justify-content: center;
     border-radius: 0.5rem;
-    overflow: hidden; /* Agar gambar tidak keluar */
+    overflow: hidden;
     position: relative;
-    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1rem;
   }
 
   swiper-slide figure img {
     width: 100%;
-    height: 100%;
-    max-width: 500px;
-    max-height: 300px; /* Batasi ukuran gambar */
-    object-fit: cover; /* Pastikan gambar mengisi seluruh area */
+    max-width: 500px; /* Ukuran maksimum untuk gambar */
+    height: auto;
+    object-fit: cover;
     border-radius: 0.5rem;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
   }
 
   swiper-slide figure img:hover {
-    transform: scale(1.05); /* Sedikit memperbesar saat hover */
+    transform: scale(1.05);
+  }
+
+  swiper-slide figure div {
+    flex: 1;
+    max-width: 500px; /* Batasi lebar teks */
+    text-align: left;
   }
 
   swiper-slide figure figcaption {
     font-family: cursive, sans-serif;
     font-size: 1.5rem;
+    font-weight: bold;
   }
 
   swiper-slide figure p {
@@ -124,5 +131,42 @@ const posts = collections.slice(0, 5);
 
   swiper-slide figure a {
     color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease-in-out;
+  }
+
+  swiper-slide figure a:hover {
+    background: white;
+    color: black;
+  }
+
+  /* 📱 MEDIA QUERY UNTUK LAYAR KECIL */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 0.5rem;
+    }
+
+    swiper-slide figure {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    swiper-slide figure img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    swiper-slide figure div {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+
+    swiper-slide figure p {
+      padding: 0;
+    }
   }
 </style>
