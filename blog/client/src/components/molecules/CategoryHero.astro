@@ -8,10 +8,10 @@ const posts = collections.slice(0, 5);
 
 <div class="hero">
   <swiper-container
-    loop="true"
-    pagination="true"
-    navigation="true"
-    autoplay='{"delay": 3000, "pauseOnMouseEnter": true}'
+  loop="true"
+  pagination="true"
+  navigation="true"
+  autoplay='{"delay": 3000, "pauseOnMouseEnter": true}'
   >
     {
       posts.map((post) => {
@@ -72,6 +72,7 @@ const posts = collections.slice(0, 5);
     border-radius: 0.5rem;
     overflow: hidden;
     position: relative;
+    height: auto;
   }
 
   swiper-slide::before {
