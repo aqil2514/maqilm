@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="inner-container">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .container {
+    padding: 1rem;
+    min-height: 100vh;
+    max-width: 100%;
+  }
+
+  .inner-container {
+    display: grid;
+    grid-template-columns: auto 30%;
+    gap: 1rem;
+    max-width: 100%;
+    /* overflow-x: auto; */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  @media (max-width: 768px) {
+    .inner-container {
+      grid-template-columns: 1fr;
+      width: 100vw;
+      overflow-x: auto;
+    }
+  }
+</style>

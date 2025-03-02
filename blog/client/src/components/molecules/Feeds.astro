@@ -1,0 +1,126 @@
+---
+import { Image } from "astro:assets";
+import type { Blog, PlaceholderBlog } from "../../@types/General";
+
+interface Props {
+  articles: Blog[];
+  placeholders: PlaceholderBlog[];
+  layout: "grid-feed" | "horizontal-scroll"
+}
+
+const { articles, placeholders, layout } = Astro.props;
+---
+
+<div class={layout}>
+  {
+    [...articles, ...placeholders].map((art) => {
+      const url = art.id === "#" ? "#" : `/blog/${art.id}`;
+      return (
+        <a href={url}>
+          <figure>
+            <Image
+              src={
+                art.data.heroImage ? art.data.heroImage : "/notfound-image.png"
+              }
+              height={320}
+              width={320}
+              alt={art.data.title + " Image"}
+            />
+            <figcaption>{art.data.title}</figcaption>
+          </figure>
+        </a>
+      );
+    })
+  }
+</div>
+
+<style>
+  /* General Styling */
+  figure {
+    border-radius: 1rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  figure img {
+    border-radius: 1rem;
+    opacity: 0.8;
+    transition: opacity 200ms ease-in-out;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  figure:hover img {
+    opacity: 1;
+  }
+
+  figcaption {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    position: absolute;
+    z-index: 2;
+    bottom: 7%;
+    left: 5%;
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
+    color: whitesmoke;
+    background-color: rgba(0, 0, 0, 0.85);
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+
+  /* Grid Layout */
+  .grid-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  .grid-feed a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .grid-feed figure {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Horizontal Scroll */
+  .horizontal-scroll {
+    display: flex;
+    gap: 1rem;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 1rem 0;
+  }
+
+  .horizontal-scroll figure {
+    display: inline-block;
+    width: 320px;
+    height: auto;
+  }
+
+  .horizontal-scroll::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .horizontal-scroll::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: var(--body-background);
+  }
+
+  .horizontal-scroll::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--primary-text);
+  }
+</style>

@@ -1,0 +1,24 @@
+---
+import type { Blog } from "../../@types/General"
+import { generatePlaceholderPost } from "../../utils"
+import ContainerFeed from "../organisms/ContainerFeed.astro"
+import ContainerGrid from "../organisms/ContainerGrid.astro"
+import Sidebar from "../organisms/Sidebar.astro"
+import Feeds from "./Feeds.astro"
+
+interface Props {
+    posts : Blog[]
+    totalPost: number;
+}
+
+const { posts, totalPost } = Astro.props
+
+const placeholders = generatePlaceholderPost(totalPost, posts);
+---
+
+<ContainerGrid>
+    <ContainerFeed>
+        <Feeds articles={posts} placeholders={placeholders} layout="grid-feed" />
+    </ContainerFeed>
+    <Sidebar />
+</ContainerGrid>

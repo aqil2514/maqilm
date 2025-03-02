@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import ImageBanner from '../atoms/ImageBanner.astro';
+import GridFeed from '../molecules/GridFeed.astro';
+
+interface Props {
+  category: string;
+}
+
+const { category } = Astro.props;
+
+const posts = await getCollection("blog");
+const selectedCategoryPost = posts.filter((post) => post.data.category === category)
+---
+
+<div class="container">
+  <ImageBanner title={category} showCategory />
+  <GridFeed posts={selectedCategoryPost} totalPost={9} />
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+</style>

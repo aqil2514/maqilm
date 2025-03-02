@@ -1,0 +1,24 @@
+---
+interface Props {
+  id?: string;
+  buttonStyle?: "orange-button";
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  ariaLabel?: string;
+  className?: string;
+}
+
+const { id, buttonStyle = "orange-button", type = "button", disabled = false, ariaLabel, className } = Astro.props;
+---
+
+<link rel="stylesheet" href="/styles/button.css" />
+
+<button
+  id={id}
+  class={`${buttonStyle} ${className}`}
+  type={type}
+  disabled={disabled}
+  aria-label={ariaLabel}
+>
+  <slot />
+</button>
