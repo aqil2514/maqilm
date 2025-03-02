@@ -5,13 +5,13 @@ import type { Blog, PlaceholderBlog } from "../../@types/General";
 interface Props {
   articles: Blog[];
   placeholders: PlaceholderBlog[];
-  layout: "grid-feed" | "horizontal-scroll"
+  layout: "grid-feed" | "horizontal-scroll";
 }
 
 const { articles, placeholders, layout } = Astro.props;
 ---
 
-<div class={layout}>
+<div id="main-layout" class={layout}>
   {
     [...articles, ...placeholders].map((art) => {
       const url = art.id === "#" ? "#" : `/blog/${art.id}`;
@@ -22,8 +22,9 @@ const { articles, placeholders, layout } = Astro.props;
               src={
                 art.data.heroImage ? art.data.heroImage : "/notfound-image.png"
               }
-              height={320}
-              width={320}
+              inferSize
+              // height={320}
+              // width={320}
               alt={art.data.title + " Image"}
             />
             <figcaption>{art.data.title}</figcaption>
@@ -33,6 +34,22 @@ const { articles, placeholders, layout } = Astro.props;
     })
   }
 </div>
+
+<script>
+  const updateLayoutClass = () => {
+    const mainLayout = document.getElementById("main-layout") as HTMLDivElement;
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth <= 720) {
+      mainLayout.classList.add("mobile-layout");
+    } else {
+      mainLayout.classList.remove("mobile-layout");
+    }
+  };
+
+  window.addEventListener("resize", updateLayoutClass);
+  window.addEventListener("DOMContentLoaded", updateLayoutClass);
+</script>
 
 <style>
   /* General Styling */
@@ -122,5 +139,34 @@ const { articles, placeholders, layout } = Astro.props;
   .horizontal-scroll::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: var(--primary-text);
+  }
+
+  /* Mobile Layout */
+  .mobile-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 .5rem;
+  }
+
+  .mobile-layout figure{
+    position: relative;
+    display: grid;
+    gap: .1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mobile-layout figure img{
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobile-layout figure figcaption{
+    display: block;
+    font-size: 1rem;
+    position: static;
+    margin: auto 0;
+    background-color: transparent;
+    color: var(--primary-text);
   }
 </style>

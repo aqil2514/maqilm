@@ -42,17 +42,6 @@ const categories = getContentCategories(posts).slice(0, 5);
 </script>
 
 <style>
-  html,
-  body {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .container {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-  }
 
   section {
     display: flex;
@@ -61,20 +50,4 @@ const categories = getContentCategories(posts).slice(0, 5);
     margin-top: 1rem;
   }
 
-  @media (max-width: 768px) {
-    button {
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border-radius: 0.5rem;
-      background: var(--primary-color);
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: var(--primary-dark);
-    }
-  }
 </style>

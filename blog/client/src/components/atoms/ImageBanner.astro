@@ -29,6 +29,7 @@ const { showCategory = false, title } = Astro.props;
     background-size: cover;
     height: 320px;
     border-radius: 1rem;
+    padding: 1rem;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -65,5 +66,15 @@ const { showCategory = false, title } = Astro.props;
 
   .sub-title-category {
     font-family: "Playwrite IT Moderna", cursive;
+  }
+
+  @media (max-width: 720px) {
+    .title-category{
+      font-size: 1.5rem;
+    }
+    .sub-title-category{
+      font-size: .8rem;
+      text-align: center;
+    }
   }
 </style>
