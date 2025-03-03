@@ -5,6 +5,7 @@ author: "Muhamad Aqil Maulana"
 pubDate: "2025-02-25"
 heroImage: "https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740486081/blogs/Excel-Project-Absen-Kerja-Hero.png"
 tags: ["Microsoft Excel", "Real Project", "HR"]
+slug: "excel-project-absen-kerja"
 category: "Microsoft Excel"
 captHeroImage: "Project Pribadi : Absen Kerja (Sumber : Dokumentasi Pribadi)"
 ---

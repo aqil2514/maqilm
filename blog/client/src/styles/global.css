@@ -128,6 +128,8 @@ a {
 .prose img {
   width: 100%;
   border-radius: 1rem;
+  max-height: 480px;
+  object-fit: contain !important;
 }
 
 .prose p {

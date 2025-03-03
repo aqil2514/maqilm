@@ -41,7 +41,9 @@ const { alt, author, label, pubDate, src, title, link } = Astro.props;
     img {
       width: 100%;
       height: auto;
+      max-height: 400px;
       transition: 200ms;
+      object-fit: cover;
     }
 
     div {
@@ -71,7 +73,7 @@ const { alt, author, label, pubDate, src, title, link } = Astro.props;
       display: -webkit-box;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
-      overflow: hidden; /* Menghindari pemangkasan terlalu ketat */
+      overflow: hidden;
     }
 
     p:last-child {
