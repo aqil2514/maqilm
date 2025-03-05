@@ -4,14 +4,25 @@ import WidgetPersonalization from "../molecules/WidgetPersonalization.astro";
 ---
 
 <div class="sidebar">
-  <WidgetNavigation />
-  <WidgetPersonalization />
+  <aside>
+    <WidgetNavigation />
+  </aside>
+  <aside>
+    <WidgetPersonalization />
+  </aside>
 </div>
 
 <style>
   .sidebar {
     display: flex;
+    position: relative;
     flex-direction: column;
     gap: 1rem;
+    height: 100%;
+  }
+
+  .sidebar > *:last-child {
+    position: sticky;
+    top: 1rem;
   }
 </style>
