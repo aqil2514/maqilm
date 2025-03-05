@@ -1,22 +1,9 @@
 ---
+import { getArticles } from "../../utils";
 import ImageHomeCarouselMain from "../atoms/ImageHomeCarouselMain.astro";
 import ImageHomeCarouselSecond from "../atoms/ImageHomeCarouselSecond.astro";
 
-import { getCollection } from "astro:content";
-
-const collections = await getCollection("blog");
-//@ts-ignore
-collections.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
-
-const articles = collections.map((article) => ({
-  title: article.data.title,
-  description: article.data.description,
-  imageSrc: article.data.heroImage || "/notfound-image.png",
-  category: article.data.category || "No Category",
-  author: article.data.author || "Anonymous",
-  date: article.data.pubDate.toISOString(),
-  link: article.id,
-}));
+const articles = await getArticles();
 
 const [latestPost, ...otherPosts] = articles.slice(0, 3);
 ---

@@ -23,7 +23,7 @@ Jika Anda tertarik untuk menggunakan proyek ini atau sekadar ingin mengetahui ca
 - Nama : Absen Kerja
 - Dibuat oleh : Muhamad Aqil Maulana
 - Teknologi : Microsoft Excel
-- Link Project : <a href="https://1drv.ms/x/c/1ce9c61702ed3db2/EYY6VMDI_M5JnKu4iMHK0GgB-07KHzS_V1hHlQbCjsj8uw?e=KhhQl6" target="_blank" style="color:black">Absen Kerja</a>
+- Link Project : <a href="https://1drv.ms/x/c/1ce9c61702ed3db2/EYY6VMDI_M5JnKu4iMHK0GgB-07KHzS_V1hHlQbCjsj8uw?e=KhhQl6" target="_blank" style="color:cyan">Absen Kerja</a>
 - Teknik yang Digunakan : Conditional Formating, Formula
 
 ### Fitur-fitur

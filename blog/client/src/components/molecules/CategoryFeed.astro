@@ -7,6 +7,7 @@ import ContainerGrid from "../organisms/ContainerGrid.astro";
 import Button from "../atoms/Button.astro";
 import ContainerFeed from "../organisms/ContainerFeed.astro";
 
+// TODO : Nanti atasin filter blog di sini
 const posts = await getCollection("blog");
 const categories = getContentCategories(posts).slice(0, 5);
 ---

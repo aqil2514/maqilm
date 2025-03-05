@@ -2,11 +2,11 @@
 title: "Belajar Jepang dengan Flash Card"
 description: "Belajar bahasa Jepang dengan menggunakan Flash Card."
 author: "Muhamad Aqil Maulana"
-pubDate: "2025-03-04"
+pubDate: "2025-03-03"
 heroImage: "https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740896327/blogs/Flashcard_Hero_rvk3ux.jpg"
 tags: ["Bahasa Jepang", "Belajar Bersama", "Belajar Jepang"]
 slug: "belajar-jepang-dengan-flashcard"
-category: "Belajar Bersama"
+category: "Belajar Bahasa Jepang"
 captHeroImage: "Japan Flash Card (Sumber : marimosou.com)"
 ---
 
