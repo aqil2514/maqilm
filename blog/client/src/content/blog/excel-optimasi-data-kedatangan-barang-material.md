@@ -3,11 +3,12 @@ title: "Proyek Excel – Optimasi Data Kedatangan Barang Material"
 description: "Proyek Excel yang berkaitan dengan Data Kedatangan Barang Material."
 author: "Muhamad Aqil Maulana"
 pubDate: "2025-03-05"
-heroImage: "https://cv.maqilm.site/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F5jkamrnf%2Fproduction%2F1119f9fba554d819c9b7eb1f0b917009bfb1c2d8-1918x1006.png&w=1920&q=75"
+heroImage: "https://res.cloudinary.com/dwcr3rpgi/image/upload/v1741208045/blogs/Optimasi%20Data%20Kedatangan%20Barang%20Material%20-%20Main.png"
 tags: ["Microsoft Excel", "Real Project", "Warehouse Admin"]
 slug: "excel-optimasi-data-kedatangan-barang-material"
 category: "Microsoft Excel"
 captHeroImage: "Project Pribadi : Data Kedatangan Barang Material (Sumber : Dokumentasi Pribadi)"
+TODO : Next ubah semua image di sini agar ke Cloudinary
 ---
 
 ## Optimasi Data Kedatangan Barang Material

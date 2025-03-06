@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import type { Blog, PlaceholderBlog } from "../../@types/General";
+import type { Articles, Blog, PlaceholderBlog } from "../../@types/General";
 
 interface Props {
-  articles: Blog[];
+  articles: Articles[];
   placeholders: PlaceholderBlog[];
   layout: "grid-feed" | "horizontal-scroll";
 }
@@ -14,20 +14,20 @@ const { articles, placeholders, layout } = Astro.props;
 <div class={layout + " main-layout"}>
   {
     [...articles, ...placeholders].map((art) => {
-      const url = art.id === "#" ? "#" : `/blog/${art.id}`;
+      const url = art.link === "#" ? "#" : `/blog/${art.link}`;
       return (
         <a href={url}>
           <figure>
             <Image
               src={
-                art.data.heroImage ? art.data.heroImage : "/notfound-image.png"
+                art.imageSrc ? art.imageSrc : "/notfound-image.png"
               }
               inferSize
               height={320}
               width={320}
-              alt={art.data.title + " Image"}
+              alt={art.title + " Image"}
             />
-            <figcaption>{art.data.title}</figcaption>
+            <figcaption>{art.title}</figcaption>
           </figure>
         </a>
       );

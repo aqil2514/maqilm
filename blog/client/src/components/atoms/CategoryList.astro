@@ -1,24 +1,16 @@
 ---
-import type { RenderedContent } from "astro:content";
-import type { InferEntrySchema } from "astro:content";
 import { generatePlaceholderPost } from "../../utils";
 import Feeds from "../molecules/Feeds.astro";
+import type { Articles } from "../../@types/General";
 
 interface Props {
-  posts: {
-    id: string;
-    body?: string;
-    collection: "blog";
-    data: InferEntrySchema<"blog">;
-    rendered?: RenderedContent;
-    filePath?: string;
-  }[];
+  posts: Articles[];
 }
 
 const { posts } = Astro.props;
 const totalSlots = 5;
 
-const categoryName = posts[0].data.category;
+const categoryName = posts[0].category;
 const articles = posts.slice(0, totalSlots);
 
 const placeholders = generatePlaceholderPost(totalSlots, articles);

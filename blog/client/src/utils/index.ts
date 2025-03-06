@@ -1,7 +1,7 @@
 import { getCollection } from "astro:content";
-import type { Blog, PlaceholderBlog } from "../@types/General";
+import type { Articles, Blog, PlaceholderBlog } from "../@types/General";
 
-export async function getArticles() {
+export async function getArticles():Promise<Articles[]> {
   const collections = await getCollection("blog");
 
   collections.sort(
@@ -24,23 +24,22 @@ export async function getArticles() {
   return articles;
 }
 
-export function getContentCategories(collections: Blog[]) {
+export function getContentCategories(collections: Articles[]) {
   return [
     ...new Set(
-      collections.map((article) => article.data.category).filter(Boolean)
+      collections.map((article) => article.category).filter(Boolean)
     ),
   ] as string[];
 }
+
 export function generatePlaceholderPost(
   totalSlots: number,
-  articles: Blog[]
+  articles: Articles[]
 ): PlaceholderBlog[] {
   const array = Array.from({ length: totalSlots - articles.length }, () => ({
-    id: "#",
-    data: {
-      title: "Coming Soon...",
-      heroImage: "/notfound-image.png",
-    },
+    link:"#",
+    title:"Coming Soon...",
+    imageSrc: "/notfound-image.png"
   }));
 
   return array;

@@ -1,8 +1,7 @@
 ---
-import { getCollection } from "astro:content";
-import { getContentCategories } from "../../../utils";
+import { getArticles, getContentCategories } from "../../../utils";
 
-const collections = await getCollection("blog");
+const collections = await getArticles()
 const categoriesSet = getContentCategories(collections)
 
 const categories = categoriesSet.slice(0, 5);

@@ -9,10 +9,15 @@ export interface Blog<T extends "blog" = "blog"> {
   filePath?: string;
 }
 
-export interface PlaceholderBlog {
-  id: string;
-  data: {
-    title: string;
-    heroImage: string;
-  };
+export interface Articles {
+  title: string;
+  description: string;
+  imageSrc: string;
+  category: string;
+  author: string;
+  date: string;
+  link: string;
 }
+
+export type PlaceholderBlog = Pick<Articles, "link" | "title"| "imageSrc">
+

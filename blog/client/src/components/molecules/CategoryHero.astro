@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import { getArticles } from "../../utils";
 
-const collections = await getCollection("blog");
+const collections = await getArticles();
 const posts = collections.slice(0, 5);
 ---
 
@@ -16,17 +16,17 @@ const posts = collections.slice(0, 5);
     {
       posts.map((post) => {
         return (
-          <swiper-slide style={`background:url(${post.data.heroImage})`}>
+          <swiper-slide style={`background:url(${post.imageSrc})`}>
             <figure>
               <Image
-                src={post.data.heroImage as string}
+                src={post.imageSrc as string}
                 inferSize
-                alt={post.data.title}
+                alt={post.title}
               />
               <div>
-                <figcaption>{post.data.title}</figcaption>
-                <p class="description">{post.data.description}</p>
-                <a href={`/blog/${post.id}`}>Baca Artikel &gt;&gt;</a>
+                <figcaption>{post.title}</figcaption>
+                <p class="description">{post.imageSrc}</p>
+                <a href={`/blog/${post.link}`}>Baca Artikel &gt;&gt;</a>
               </div>
             </figure>
           </swiper-slide>

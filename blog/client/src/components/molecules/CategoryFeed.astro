@@ -2,13 +2,12 @@
 import CategoryList from "../atoms/CategoryList.astro";
 import Sidebar from "../organisms/Sidebar.astro";
 import { getCollection } from "astro:content";
-import { getContentCategories } from "../../utils/index";
+import { getArticles, getContentCategories } from "../../utils/index";
 import ContainerGrid from "../organisms/ContainerGrid.astro";
 import Button from "../atoms/Button.astro";
 import ContainerFeed from "../organisms/ContainerFeed.astro";
 
-// TODO : Nanti atasin filter blog di sini
-const posts = await getCollection("blog");
+const posts = await getArticles();
 const categories = getContentCategories(posts).slice(0, 5);
 ---
 
@@ -16,7 +15,7 @@ const categories = getContentCategories(posts).slice(0, 5);
   <ContainerFeed>
     {
       categories.map((cat) => {
-        const collection = posts.filter((post) => post.data.category === cat);
+        const collection = posts.filter((post) => post.category === cat);
 
         if (!collection) return null;
 
