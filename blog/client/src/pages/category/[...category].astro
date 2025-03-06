@@ -1,13 +1,12 @@
 ---
-import { getCollection } from "astro:content";
-import { getContentCategories, toTitleCase } from "../../utils";
+import { getArticles, getContentCategories, toTitleCase } from "../../utils";
 import Header from "../../components/organisms/Header.astro";
 import Footer from "../../components/organisms/Footer.astro";
 import CategorySlugTemplate from "../../components/templates/CategorySlugTemplate.astro";
 import BaseHead from "../../components/BaseHead.astro";
 
 export async function getStaticPaths() {
-  const categories = await getCollection("blog");
+  const categories = await getArticles();
   const catMap = getContentCategories(categories).map((cat) =>
     encodeURIComponent(cat.toLowerCase().replaceAll(" ", "-"))
   );

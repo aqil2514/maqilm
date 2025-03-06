@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import ImageBanner from '../atoms/ImageBanner.astro';
 import GridFeed from '../molecules/GridFeed.astro';
+import { getArticles } from '../../utils';
 
 interface Props {
   category: string;
@@ -9,8 +10,8 @@ interface Props {
 
 const { category } = Astro.props;
 
-const posts = await getCollection("blog");
-const selectedCategoryPost = posts.filter((post) => post.data.category === category)
+const posts = await getArticles();
+const selectedCategoryPost = posts.filter((post) => post.category === category)
 ---
 
 <div class="container">
