@@ -1,9 +1,13 @@
 ---
 import WidgetDarkMode from "../atoms/Widgets/DarkMode.astro";
+import GoToUp from "../atoms/Widgets/GoToUp.astro";
 ---
 
 <div class="sidebar">
-  <WidgetDarkMode />
+  <section class="section-1">
+    <WidgetDarkMode />
+    <GoToUp />
+  </section>
 </div>
 
 <style>
@@ -11,6 +15,13 @@ import WidgetDarkMode from "../atoms/Widgets/DarkMode.astro";
     border-radius: 1rem;
     padding: 1rem;
     background-color: var(--primary-background);
+  }
+
+  .section-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 
   @media (max-width: 720px) {

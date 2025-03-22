@@ -1,14 +1,23 @@
 ---
 import { getArticles } from "../../utils";
 import ArticleFeed from "./ArticleFeed.astro";
+import Pagination from "./GeneralPagination.astro";
 
 const articles = await getArticles();
+
+// Pagination
+// const articlePerPage: number = 5;
 ---
 
 <div>
   <h1>Artikel</h1>
   <div class="article-container">
-    {articles.map((article) => <ArticleFeed {...article} />)}
+    {
+      articles
+        // .slice(0, articlePerPage)
+        .map((article) => <ArticleFeed {...article} />)
+    }
+    <p class="no-more-post">Tidak ada lagi Postingan</p>
   </div>
 </div>
 
@@ -25,9 +34,22 @@ const articles = await getArticles();
     color: var(--primary-text);
   }
 
-  .article-container{
+  .article-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .no-more-post {
+    font-family: "Merriweather", "Courier New", Courier, monospace;
+    text-align: center;
+    cursor: not-allowed;
+    color: var(--primary-text);
+  }
+
+  @media (max-width:720px) {
+    .no-more-post{
+      text-align: center;
+    }
   }
 </style>

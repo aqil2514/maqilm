@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<span id="go-to-top">
+  <Icon name="line-md:arrow-up" title="Back to Top" />
+</span>
+
+<style>
+    #go-to-top svg{
+        width: 32px;
+        height: 32px;
+        background-color: var(--back-to-top);
+        border-radius: 1rem;
+        color: #fff;
+        transition: 200ms;
+        cursor: pointer;
+    }
+
+    #go-to-top svg:hover{
+        transform: scale(1.1);
+    }
+</style>
+
+<script src="/scripts/go-to-top.js" defer></script>

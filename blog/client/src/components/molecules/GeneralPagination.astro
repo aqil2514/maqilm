@@ -1,0 +1,64 @@
+---
+// INI MASIH BELUM TAU KEPAKEK ATAU ENGGAK. JADI DISIMPEN AJAH DULU. JANGAN DIHAPUS
+import type { Articles } from "../../@types/General";
+
+interface Props {
+  articles: Articles[];
+  articlePerPage: number;
+}
+
+const { articles, articlePerPage } = Astro.props;
+
+const currentPage: number = 1;
+const totalArticles = articles.length;
+const totalPage = Math.ceil(totalArticles / articlePerPage);
+---
+
+<div id="page-container" class="pagination">
+  <a id="prev-page">
+    <button>Halaman Sebelumnya</button>
+  </a>
+
+  <a id="next-page">
+    <button>Halaman Selanjutnya</button>
+  </a>
+
+
+  <p id="page-info" data-currentPage={currentPage} data-totalPage={totalPage}>
+    Halaman {currentPage} dari {totalPage} halaman
+  </p>
+</div>
+
+<script>
+  const searchParams = new URLSearchParams(window.location.search);
+  const page = searchParams.get("page") || "1";
+
+  const pageInfo = document.getElementById("page-info") as HTMLParagraphElement;
+  const totalPage = pageInfo.dataset.totalpage;
+  const isLastPage = Number(page) > Number(totalPage);
+  const isFirstPage = Number(page) < 1;
+
+  if(isLastPage){
+    window.location.replace(`?page=${totalPage}`)
+  } else if(isFirstPage){
+    window.location.replace(`?page=1`)
+  }
+
+  pageInfo.innerText = `Halaman ${page} dari ${totalPage} halaman`;
+
+  const nextPageEl = document.getElementById("next-page") as HTMLLinkElement;
+  if (page === totalPage) {
+    nextPageEl.remove();
+  } else {
+    const nextPage = Number(page) + 1;
+    nextPageEl.href = `?page=${nextPage}`;
+  }
+
+  const prevPageEl = document.getElementById("prev-page") as HTMLLinkElement;
+  if (page === "1") {
+    prevPageEl.remove();
+  } else {
+    const prevPage = Number(page) - 1;
+    prevPageEl.href = `?page=${prevPage}`;
+  }
+</script>

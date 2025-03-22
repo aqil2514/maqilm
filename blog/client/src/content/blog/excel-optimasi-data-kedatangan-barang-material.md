@@ -8,7 +8,6 @@ tags: ["Microsoft Excel", "Real Project", "Warehouse Admin"]
 slug: "excel-optimasi-data-kedatangan-barang-material"
 category: "Microsoft Excel"
 captHeroImage: "Project Pribadi : Data Kedatangan Barang Material (Sumber : Dokumentasi Pribadi)"
-TODO : Next ubah semua image di sini agar ke Cloudinary
 ---
 
 ## Optimasi Data Kedatangan Barang Material

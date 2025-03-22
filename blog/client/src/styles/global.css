@@ -44,6 +44,9 @@
   /* <<<< STANDBY >>>> */
   --link-primary: #000;
   --link-stand-1: #000;
+
+  /* <<<< WIDGETS >>>> */
+  --back-to-top: #000;
 }
 
 [data-theme="dark"] {
@@ -51,19 +54,21 @@
   --primary-background: #3f4f44;
   --header-background: #3f4f44;
   --footer-background: #3f4f44;
-
+  
   /* Text element Variable */
   --primary-text: #dcd7c9;
   --secondary-text: #d6d6d6;
   --link-hover-2: #4b4376;
   --article-text: #fff;
-
+  
   /* Link element Variable */
   --link-hover: #3f4f44;
   --link-hover-2: #fff;
-
+  
   --link-primary: #dcd7c9;
   --link-stand-1: #ecdfcc;
+
+  --back-to-top: #39ac4c;
 }
 
 @font-face {
@@ -154,6 +159,10 @@ a {
 @media (max-width: 720px) {
   .prose p {
     font-size: 14px;
+  }
+
+  .prose h1{
+  font-size: 1.3rem;
   }
 }
 /* PROSE SECTION END */

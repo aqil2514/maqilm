@@ -19,7 +19,7 @@ const {
   heroImage = "/notfound-image.png",
   author = "Anonymous",
   tags,
-  category,
+  category = "",
   captHeroImage,
 } = Astro.props;
 
@@ -61,6 +61,29 @@ const {
         gap: 1rem;
       }
 
+      .breadcrumbs{
+        display: flex;
+        gap: .25rem;
+        margin: auto 0
+      }
+
+      .breadcrumbs a{
+        color: var(--primary-text);
+        text-decoration: none;
+      }
+      
+      .breadcrumbs a:hover{
+        text-decoration: underline;
+      }
+
+      .breadcrumbs .post-title{
+        cursor: default;
+      }
+
+      .breadcrumbs .post-title:hover{
+        text-decoration: underline;
+      }
+
       @media (max-width: 720px) {
         main {
           width: 100%;
@@ -87,6 +110,11 @@ const {
       <div></div>
       <div class="prose-sidebar-wrapper">
         <ContainerArticle>
+          <div class="breadcrumbs">
+            <a title={`Pergi ke kategori "${category}"`} href={`/category/${encodeURIComponent(category.toLowerCase().replaceAll(" ", "-"))}`}>{category}</a>
+            <p style="margin-bottom: auto;">&gt;&gt;</p>
+            <p title={`Sedang membaca artikel "${title}"`} class="post-title">This Post</p>
+          </div>
           <h1 class="title">{title}</h1>
 
           <ImageHero
