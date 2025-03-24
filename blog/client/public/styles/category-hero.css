@@ -3,10 +3,19 @@
     background-color: var(--primary-background);
     padding: 1rem;
     border-radius: 1rem;
+    margin-bottom: 1rem;
   }
 
   .category-container {
     width: 100%;
+  }
+
+  .category-container-mobile{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 12px;
   }
 
   .sub-container {
@@ -96,7 +105,7 @@
   }
 
   button.reset-button {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     padding: 0.5rem 1rem;
     background-color: var(--button-background, #007bff);
     color: var(--button-text, #ffffff);
@@ -138,4 +147,10 @@
 
   .hidden {
     display: none;
+  }
+
+  @media (max-width:720px) {
+    .list input:checked + .label-desc button {
+        display: none;
+    }
   }

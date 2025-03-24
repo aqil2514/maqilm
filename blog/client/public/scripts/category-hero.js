@@ -3,6 +3,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputLists = document.querySelectorAll(".list input");
   const categoryContainer = document.getElementById("category-container");
   const subContainers = document.querySelectorAll(".sub-container");
+  const isMobile = window.screen.width <= 720;
+
+  function applyMobileDisplay() {
+    categoryContainer.classList.replace(
+      "category-container",
+      "category-container-mobile"
+    );
+    categoryContainer.classList.remove("horizontal-layout");
+    categoryContainer.classList.remove("vertical-layout");
+    subContainers.forEach((sub) => sub.remove());
+  }
+
+  function removeMobileDisplay() {
+    const isMobile = categoryContainer.classList.contains(
+      "category-container-mobile"
+    );
+
+    if (isMobile) {
+      window.location.reload();
+      return;
+    }
+  }
+
+  isMobile ? applyMobileDisplay() : removeMobileDisplay();
 
   resetButton.addEventListener("click", () => {
     // Event 1 : Ubah layout jadi horizontal
@@ -21,6 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
   inputLists.forEach((radio) => {
     radio.addEventListener("change", () => {
       const radioArray = Array.from(inputLists);
+      const isMobile = categoryContainer.classList.contains(
+        "category-container-mobile"
+      );
+
+      if (isMobile) {
+        const category = encodeURIComponent(radio.dataset.category.toLowerCase().replaceAll(" ", "-"));
+        window.location = `/category/${category}`;
+        return;
+      }
 
       //   Event 1: Munculkan subcategory dari category yang dipilih
       const dataCategory = radio.dataset.category;
@@ -53,5 +86,16 @@ document.addEventListener("DOMContentLoaded", () => {
       // Event 3 : Hapus class hidden ke tombol reset
       resetButton.classList.remove("hidden");
     });
+  });
+
+  window.addEventListener("resize", () => {
+    const isMobile = window.screen.width <= 720;
+
+    if (isMobile) {
+      applyMobileDisplay();
+      return;
+    }
+    removeMobileDisplay();
+    return;
   });
 });
