@@ -2,13 +2,11 @@
 import ContainerArticle from "../organisms/ContainerArticle.astro";
 import Sidebar from "../organisms/Sidebar.astro";
 ---
-
-
 <main>
     <!-- <ImageHeroCarousel /> -->
     <div class="grid-container">
-      <div></div>
-      <ContainerArticle>
+      <div class="helper"></div>
+      <ContainerArticle marginTop="0">
         <!-- Introduction -->
         <h2>Tentang Saya</h2>
         <p>
@@ -109,5 +107,21 @@ import Sidebar from "../organisms/Sidebar.astro";
 
   ul li a:hover {
     color: blue;
+  }
+
+  @media (max-width:1080px) {
+    .helper{
+        display: none;
+    }
+
+    .grid-container{
+    grid-template-columns: auto 30%;
+    }
+  }
+
+  @media (max-width:720px) {
+    .grid-container{
+        grid-template-columns: none;
+    }
   }
 </style>

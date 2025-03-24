@@ -1,4 +1,12 @@
-<article class="prose">
+---
+interface Props {
+  marginTop?: string;
+}
+
+const { marginTop } = Astro.props;
+---
+
+<article style={`margin-top:${marginTop}`} class={`prose`}>
   <slot />
 </article>
 
@@ -11,7 +19,7 @@
     color: var(--primary-text);
     background-color: var(--primary-background);
   }
-  
+
   @media (max-width: 720px) {
     .prose h1 {
       font-size: 2rem;
