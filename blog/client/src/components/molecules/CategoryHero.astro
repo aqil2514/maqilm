@@ -1,10 +1,11 @@
 ---
-import { getContentSubCategories } from "../../utils";
+import { getContentSubCategories, toUriComponents } from "../../utils";
 import { getArticles } from "../../utils";
 
 const collections = await getArticles();
 const categories = getContentSubCategories(collections);
 ---
+<link rel="stylesheet" href="styles/category-hero.css">
 
 <div class="main-container">
   <div id="category-container" class="category-container horizontal-layout">
@@ -20,7 +21,7 @@ const categories = getContentSubCategories(collections);
           <div class="label-desc">
             <label for={`Category ${cat.category}`}>{cat.category}</label>
             <a
-              href={`/category/${encodeURIComponent(cat.category.toLowerCase().replaceAll(" ", "-"))}`}
+              href={`/category/${toUriComponents(cat.category)}`}
             >
               <button>Lebih Lanjut</button>
             </a>
@@ -49,148 +50,4 @@ const categories = getContentSubCategories(collections);
 </div>
 <button id="reset-button" class="reset-button hidden">Reset</button>
 
-<script src="/public/scripts/category-hero.js" defer></script>
-
-<style>
-  .main-container {
-    display: flex;
-    background-color: var(--primary-background);
-    padding: 1rem;
-    border-radius: 1rem;
-  }
-
-  .category-container {
-    width: 100%;
-  }
-
-  .sub-container {
-    width: 100%;
-    max-height: 240px;
-    overflow: scroll;
-    padding: 1rem;
-    color: var(--primary-text);
-  }
-
-  .sub-container .sub-link {
-    display: flex;
-    flex-direction: column;
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
-  }
-
-  .sub-container::-webkit-scrollbar {
-    display: none; 
-  }
-
-  .sub-container .sub-link a {
-    color: var(--link-primary);
-    transition: 200ms;
-    text-decoration: none;
-  }
-  .sub-container .sub-link a:hover {
-    color: var(--link-hover-2);
-    transform: translateX(10px);
-  }
-
-  .list input {
-    display: none;
-  }
-
-  .list label {
-    cursor: pointer;
-    transition: 200ms;
-    color: var(--primary-text);
-  }
-
-  .list .label-desc button {
-    display: none;
-  }
-
-  .list .label-desc label:hover {
-    background-color: var(--hover-background, #f0f0f0);
-    color: var(--hover-text, #333);
-    border-radius: 0.3rem;
-    transform: translateX(10px);
-    padding: 0.3rem 0.5rem;
-  }
-
-  .list input:checked + .label-desc label:hover {
-    cursor: default;
-    background-color: inherit !important;
-    color: inherit !important;
-    transform: none;
-    padding: 0 !important;
-  }
-
-  .list input:checked + .label-desc {
-    font-weight: 600;
-    cursor: default;
-    color: var(--highlight-color, #007bff);
-    background-color: var(--highlight-background, #e0f7fa);
-    padding: 0.3rem 0.5rem;
-    border-radius: 0.3rem;
-    transition:
-      background-color 0.2s ease,
-      color 0.2s ease;
-  }
-
-  .list input:checked + .label-desc button {
-    display: block;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .list input:checked + .label-desc button:hover {
-    background-color: #0056b3;
-  }
-
-  button.reset-button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: var(--button-background, #007bff);
-    color: var(--button-text, #ffffff);
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition:
-      background-color 0.3s ease,
-      transform 0.2s ease;
-  }
-
-  button.reset-button:hover {
-    background-color: var(--button-hover-background, #0056b3);
-    transform: scale(1.05);
-  }
-
-  button.reset-button:active {
-    background-color: var(--button-active-background, #004494);
-    transform: scale(0.98);
-  }
-
-  .horizontal-layout {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .vertical-layout {
-    display: flex;
-    flex-direction: column;
-    max-height: 240px;
-    overflow: scroll;
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
-  }
-
-  .vertical-layout::-webkit-scrollbar{
-    display: none;
-  }
-
-  .hidden {
-    display: none;
-  }
-</style>
+<script src="/scripts/category-hero.js" defer></script>
