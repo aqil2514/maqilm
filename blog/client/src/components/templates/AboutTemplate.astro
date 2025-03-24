@@ -1,0 +1,113 @@
+---
+import ContainerArticle from "../organisms/ContainerArticle.astro";
+import Sidebar from "../organisms/Sidebar.astro";
+---
+
+
+<main>
+    <!-- <ImageHeroCarousel /> -->
+    <div class="grid-container">
+      <div></div>
+      <ContainerArticle>
+        <!-- Introduction -->
+        <h2>Tentang Saya</h2>
+        <p>
+          Selamat datang di Aqil's Blog! Saya, Muhamad Aqil Maulana, seorang
+          pengembang perangkat lunak yang sangat bersemangat dalam berbagi wawasan
+          mengenai teknologi, pengembangan diri, dan perjalanan hidup.
+        </p>
+    
+        <!-- Misi dan Tujuan -->
+        <h3>Misi Saya</h3>
+        <p>
+          Misi saya adalah untuk memberikan wawasan yang tidak hanya bermanfaat
+          tetapi juga menginspirasi. Di blog ini, saya berusaha menyediakan artikel
+          yang membantu pembaca mengembangkan keterampilan pribadi, profesional, dan
+          mencapai tujuan hidup mereka.
+        </p>
+    
+        <!-- Nilai dan Prinsip -->
+        <h3>Nilai yang Saya Pegang</h3>
+        <p>
+          Saya percaya bahwa berbagi pengetahuan adalah kunci untuk perkembangan.
+          Melalui tulisan, saya berkomitmen untuk memberikan informasi yang jujur
+          dan berguna, yang bisa langsung diterapkan dalam kehidupan sehari-hari.
+        </p>
+    
+        <!-- Ajakan untuk Terlibat -->
+        <h3>Ajak Terlibat</h3>
+        <p>
+          Jika Anda merasa artikel saya bermanfaat, pastikan untuk mengikuti blog
+          ini dan bergabung dengan newsletter untuk mendapatkan pembaruan terbaru.
+          Jangan ragu untuk menghubungi saya via email atau media sosial jika Anda
+          ingin berdiskusi lebih lanjut atau berbagi pemikiran Anda.
+        </p>
+    
+        <!-- Tautan Terkait -->
+        <h3>Terkait</h3>
+        <ul>
+          <li>
+            <a href="https://cv.maqilm.site/id" target="_blank">Lihat CV Saya</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/aqil2514/" target="_blank"
+              >Linked In</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/aqil2514/" target="_blank">Github</a>
+          </li>
+        </ul>
+    
+        <!-- Penutupan -->
+        <p>
+          Terima kasih sudah mengunjungi Aqil's Blog! Semoga informasi yang saya
+          bagikan dapat menginspirasi dan membantu Anda dalam perjalanan pribadi
+          maupun profesional Anda. Jangan lupa untuk kembali lagi!
+        </p>
+      </ContainerArticle>
+      <Sidebar />
+    </div>
+  </main>
+
+<style>
+  h2,
+  h3 {
+    color: rgb(var(--black));
+    margin-bottom: 1rem;
+  }
+
+  main {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 5% auto 30%;
+    gap: 1rem;
+  }
+
+  p {
+    line-height: 1.6;
+    color: rgb(var(--dark-gray));
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  ul li a {
+    color: rgb(var(--accent));
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+  }
+
+  ul li a:hover {
+    color: blue;
+  }
+</style>
