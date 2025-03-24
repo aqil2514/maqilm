@@ -1,10 +1,8 @@
 ---
 import CategoryList from "../atoms/CategoryList.astro";
 import Sidebar from "../organisms/Sidebar.astro";
-import { getCollection } from "astro:content";
 import { getArticles, getContentCategories } from "../../utils/index";
 import ContainerGrid from "../organisms/ContainerGrid.astro";
-import Button from "../atoms/Button.astro";
 import ContainerFeed from "../organisms/ContainerFeed.astro";
 
 const posts = await getArticles();
@@ -22,32 +20,15 @@ const categories = getContentCategories(posts).slice(0, 5);
         return <CategoryList posts={collection} />;
       })
     }
-    <section>
-      <Button id="more-category" buttonStyle="orange-button"
-        >More category</Button
-      >
-    </section>
   </ContainerFeed>
   <Sidebar />
 </ContainerGrid>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const moreCategoryButton = document.getElementById("more-category");
-
-    moreCategoryButton?.addEventListener("click", () => {
-      alert("Under Development");
-    });
-  });
-</script>
-
 <style>
-
   section {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
   }
-
 </style>

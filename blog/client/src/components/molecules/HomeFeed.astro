@@ -1,22 +1,18 @@
 ---
-import { getArticles } from "../../utils";
+import type { Articles } from "../../@types/General";
 import ArticleFeed from "./ArticleFeed.astro";
-import Pagination from "./GeneralPagination.astro";
 
-const articles = await getArticles();
+interface Props {
+  articles: Articles[];
+}
 
-// Pagination
-// const articlePerPage: number = 5;
+const { articles } = Astro.props;
 ---
 
 <div>
   <h1>Artikel</h1>
   <div class="article-container">
-    {
-      articles
-        // .slice(0, articlePerPage)
-        .map((article) => <ArticleFeed {...article} />)
-    }
+    {articles.map((article) => <ArticleFeed {...article} />)}
     <p class="no-more-post">Tidak ada lagi Postingan</p>
   </div>
 </div>
@@ -47,8 +43,8 @@ const articles = await getArticles();
     color: var(--primary-text);
   }
 
-  @media (max-width:720px) {
-    .no-more-post{
+  @media (max-width: 720px) {
+    .no-more-post {
       text-align: center;
     }
   }

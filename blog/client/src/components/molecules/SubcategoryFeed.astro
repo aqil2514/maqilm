@@ -1,0 +1,82 @@
+---
+import { toUriComponents } from "../../utils";
+interface Props {
+  subCategories: string[];
+}
+
+const pathName = Astro.originPathname;
+const splittedPathName = pathName.split("/");
+const originPathame = splittedPathName.slice(0, 3).join("/");
+const endPathname: string = splittedPathName[3] || splittedPathName[2];
+
+const { subCategories } = Astro.props;
+---
+
+<div>
+  {
+    originPathame.endsWith(endPathname) ? (
+      <span class="active-sub">
+        <p>Semua Artikel</p>
+      </span>
+    ) : (
+      <span class="nonactive-sub">
+        <a href={originPathame}>Semua Artikel</a>
+      </span>
+    )
+  }
+  {
+    subCategories.map((sub) => {
+      const subLink = toUriComponents(sub);
+      const link = `${originPathame}/${subLink}`;
+      if (pathName.endsWith(subLink)) {
+        return (
+          <span class="active-sub">
+            <p>{sub}</p>
+          </span>
+        );
+      }
+
+      return (
+        <span class="nonactive-sub">
+          <a href={link}>{sub}</a>
+        </span>
+      );
+    })
+  }
+</div>
+
+<style>
+  div {
+    display: flex;
+    gap: 1rem;
+    color: var(--primary-text);
+    padding: 1rem;
+  }
+
+  div p {
+    cursor: default;
+  }
+
+  div a {
+    color: var(--primary-text);
+    text-decoration: none;
+  }
+
+  .active-sub {
+    background-color: #336d82;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: .25rem;
+  }
+  
+  .nonactive-sub{
+    padding: 0.25rem 0.5rem;
+    border-radius: .25rem;
+    transition: 200ms;
+  }
+  
+  .nonactive-sub:hover{
+    background-color: #336d82;
+    color: #fff;
+  }
+</style>

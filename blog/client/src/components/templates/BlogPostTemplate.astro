@@ -22,7 +22,6 @@ const {
   category = "",
   captHeroImage,
 } = Astro.props;
-
 ---
 
 <html lang="id">
@@ -61,26 +60,26 @@ const {
         gap: 1rem;
       }
 
-      .breadcrumbs{
+      .breadcrumbs {
         display: flex;
-        gap: .25rem;
-        margin: auto 0
+        gap: 0.25rem;
+        margin: auto 0;
       }
 
-      .breadcrumbs a{
+      .breadcrumbs a {
         color: var(--primary-text);
         text-decoration: none;
       }
-      
-      .breadcrumbs a:hover{
+
+      .breadcrumbs a:hover {
         text-decoration: underline;
       }
 
-      .breadcrumbs .post-title{
+      .breadcrumbs .post-title {
         cursor: default;
       }
 
-      .breadcrumbs .post-title:hover{
+      .breadcrumbs .post-title:hover {
         text-decoration: underline;
       }
 
@@ -111,9 +110,15 @@ const {
       <div class="prose-sidebar-wrapper">
         <ContainerArticle>
           <div class="breadcrumbs">
-            <a title={`Pergi ke kategori "${category}"`} href={`/category/${encodeURIComponent(category.toLowerCase().replaceAll(" ", "-"))}`}>{category}</a>
+            <a
+              title={`Pergi ke kategori "${category}"`}
+              href={`/category/${encodeURIComponent(category[0].toLowerCase().replaceAll(" ", "-"))}`}
+              >{category[0]}</a
+            >
             <p style="margin-bottom: auto;">&gt;&gt;</p>
-            <p title={`Sedang membaca artikel "${title}"`} class="post-title">This Post</p>
+            <p title={`Sedang membaca artikel "${title}"`} class="post-title">
+              This Post
+            </p>
           </div>
           <h1 class="title">{title}</h1>
 
@@ -125,7 +130,7 @@ const {
             captHeroImage={captHeroImage}
           />
 
-          <ArticleBlogMeta author={author} category={category} tags={tags} />
+          <ArticleBlogMeta author={author} category={category[0]} tags={tags} />
 
           <slot />
         </ContainerArticle>

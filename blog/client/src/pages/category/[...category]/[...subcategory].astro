@@ -1,0 +1,48 @@
+---
+import BaseHead from "../../../components/BaseHead.astro";
+import Footer from "../../../components/organisms/Footer.astro";
+import Header from "../../../components/organisms/Header.astro";
+import CategorySlugTemplate from "../../../components/templates/CategorySlugTemplate.astro";
+import {
+  getArticles,
+  getContentSubCategories,
+  toTitleCase,
+  toUriComponents,
+} from "../../../utils";
+
+export async function getStaticPaths() {
+  const collections = await getArticles();
+  const categories = getContentSubCategories(collections);
+
+  const resultParams = categories.flatMap((cat) => {
+    return cat.subCategories.map((sub) => {
+      const category = toUriComponents(cat.category);
+      const subcategory = toUriComponents(sub);
+
+      return {
+        params: { category, subcategory },
+      };
+    });
+  });
+
+  return resultParams;
+}
+
+const originPathname = Astro.originPathname;
+const pathName = originPathname.split("/").slice(0,3).join("/")
+const {category, subcategory}= Astro.params;
+const decodedCategory = toTitleCase(decodeURIComponent(category).replaceAll("-", " "));
+const decodedSubcategory = toTitleCase(decodeURIComponent(subcategory).replaceAll("-", " "));
+---
+
+<header>
+  <BaseHead
+    title={`test| Aqil's Blog`}
+    description={`Kumpulan artikel tentang test`}
+  />
+</header>
+<body>
+  <Header />
+  <CategorySlugTemplate category={decodedCategory} subCategory={decodedSubcategory} />
+  <Footer />
+</body>

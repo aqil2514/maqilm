@@ -6,7 +6,7 @@ pubDate: "2025-03-03"
 heroImage: "https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740896327/blogs/Flashcard_Hero_rvk3ux.jpg"
 tags: ["Bahasa Jepang", "Belajar Bersama", "Belajar Jepang"]
 slug: "belajar-jepang-dengan-flashcard"
-category: "Belajar Bahasa Jepang"
+category: ["Bahasa Jepang", "Belajar"]
 captHeroImage: "Japan Flash Card (Sumber : marimosou.com)"
 ---
 

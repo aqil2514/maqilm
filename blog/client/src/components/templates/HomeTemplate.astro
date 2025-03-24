@@ -1,8 +1,10 @@
 ---
+import { getArticles } from "../../utils";
 import ArticleSlider from "../molecules/ArticleSlider.astro";
 import HomeFeed from "../molecules/HomeFeed.astro";
-import ImageHeroCarousel from "../molecules/ImageHeroCarousel.astro";
-import Sidebar from "../organisms/Sidebar.astro"
+import Sidebar from "../organisms/Sidebar.astro";
+
+const articles = await getArticles();
 ---
 
 <main>
@@ -10,7 +12,7 @@ import Sidebar from "../organisms/Sidebar.astro"
   <!-- <ImageHeroCarousel /> -->
   <div class="grid-container">
     <div></div>
-    <HomeFeed />
+    <HomeFeed articles={articles} />
     <Sidebar />
   </div>
 </main>

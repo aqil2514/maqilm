@@ -14,6 +14,7 @@ export interface Articles {
   description: string;
   imageSrc: string;
   category: string;
+  subCategory: string;
   author: string;
   date: string;
   link: string;

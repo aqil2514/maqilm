@@ -7,7 +7,7 @@ heroImage: "https://res.cloudinary.com/dwcr3rpgi/image/upload/v1741292492/blogs/
 captHeroImage: "React Context Props Drilling (Sumber : Dokumentasi Pribadi)"
 tags: ["Front End", "React Js", "React Context"]
 slug: "atasi-props-driliing-dengan-react-context"
-category: "React Js"
+category: ["React Js", "Tips"]
 ---
 
 ### React Js

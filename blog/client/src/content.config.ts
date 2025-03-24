@@ -15,7 +15,7 @@ const blog = defineCollection({
     captHeroImage: z.string().optional(),
     author: z.string().optional(),
     tags: z.array(z.string()).optional(),
-    category: z.string().optional(),
+    category: z.array(z.string()).optional(),
   }),
 });
 

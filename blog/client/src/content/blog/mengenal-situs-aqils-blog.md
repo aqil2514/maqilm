@@ -5,7 +5,7 @@ author: "Muhamad Aqil Maulana"
 pubDate: "2025-02-24"
 heroImage: "https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740401135/blogs/Cuplikan_layar_2025-02-24_193548_pbcgti.png"
 tags: ["Self Improvement", "Pendidikan", "Produktivitas", "Astro Js", "Blog"]
-category: "Personal Growth"
+category: ["Personal Growth", "Sub"]
 ---
 
 ## Apa itu Aqil's Blog?

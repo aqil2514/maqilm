@@ -6,7 +6,7 @@ pubDate: "2025-03-05"
 heroImage: "https://res.cloudinary.com/dwcr3rpgi/image/upload/v1741208045/blogs/Optimasi%20Data%20Kedatangan%20Barang%20Material%20-%20Main.png"
 tags: ["Microsoft Excel", "Real Project", "Warehouse Admin"]
 slug: "excel-optimasi-data-kedatangan-barang-material"
-category: "Microsoft Excel"
+category: ["Microsoft Excel", "Real Project"]
 captHeroImage: "Project Pribadi : Data Kedatangan Barang Material (Sumber : Dokumentasi Pribadi)"
 ---
 

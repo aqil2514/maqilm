@@ -1,0 +1,38 @@
+---
+import BaseHead from "../../../components/BaseHead.astro";
+import Footer from "../../../components/organisms/Footer.astro";
+import Header from "../../../components/organisms/Header.astro";
+import CategorySlugTemplate from "../../../components/templates/CategorySlugTemplate.astro";
+import { getArticles, getContentCategories, toTitleCase } from "../../../utils";
+
+export async function getStaticPaths() {
+  const categories = await getArticles();
+  const catMap = getContentCategories(categories).map((cat) =>
+    encodeURIComponent(cat.toLowerCase().replaceAll(" ", "-"))
+  );
+  const paramsResult = catMap.map((cat) => {
+    return {
+      params: { category: cat },
+    };
+  });
+
+  return paramsResult;
+}
+
+const params = Astro.params;
+const decodedParams = toTitleCase(
+  decodeURIComponent(params.category).replaceAll("-", " ")
+);
+---
+
+<header>
+  <BaseHead
+    title={`${decodedParams} | Aqil's Blog`}
+    description={`Kumpulan artikel tentang ${decodedParams}`}
+  />
+</header>
+<body>
+  <Header />
+  <CategorySlugTemplate category={decodedParams} />
+  <Footer />
+</body>

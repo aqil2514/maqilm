@@ -6,7 +6,7 @@ pubDate: "2025-02-23"
 heroImage: "https://res.cloudinary.com/dwcr3rpgi/image/upload/v1740315901/blogs/pola-hidup-sehat.jpg"
 tags: ["Kesehatan", "Gaya Hidup", "Nutrisi", "Olahraga", "Kesehatan Mental"]
 captHeroImage: "Pola hidup sehat (Photo by Hunor Kerekes on Unsplash)"
-category: "Health & Wellness"
+category: ["Health & Wellness", "Sub"]
 ---
 
 ## Mengapa Pola Hidup Sehat Itu Penting?

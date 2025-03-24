@@ -1,22 +1,27 @@
 ---
-import { getCollection } from 'astro:content';
-import ImageBanner from '../atoms/ImageBanner.astro';
-import GridFeed from '../molecules/GridFeed.astro';
-import { getArticles } from '../../utils';
+import ImageBanner from "../atoms/ImageBanner.astro";
+import { getArticles } from "../../utils";
+import GridFeed from "../molecules/GridFeed.astro";
 
 interface Props {
   category: string;
+  subCategory?: string;
 }
 
-const { category } = Astro.props;
+const { category, subCategory } = Astro.props;
 
 const posts = await getArticles();
-const selectedCategoryPost = posts.filter((post) => post.category === category)
+const selectedCategoryPost = subCategory
+  ? posts.filter(
+      (post) => post.category === category && post.subCategory === subCategory
+    )
+  : posts.filter((post) => post.category === category);
 ---
 
 <div class="container">
   <ImageBanner title={category} showCategory />
-  <GridFeed posts={selectedCategoryPost} totalPost={9} />
+  <!-- <HomeFeed articles={selectedCategoryPost} /> -->
+  <GridFeed posts={selectedCategoryPost} totalPost={9} category={category} />
 </div>
 
 <style>
@@ -27,10 +32,9 @@ const selectedCategoryPost = posts.filter((post) => post.category === category)
     padding: 1rem;
   }
 
-  @media (max-width:720px) {
-    .container{
-      padding: .5rem;
+  @media (max-width: 720px) {
+    .container {
+      padding: 0.5rem;
     }
   }
-
 </style>

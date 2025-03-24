@@ -19,22 +19,27 @@
 :root {
   --accent: #2337ff;
   --accent-dark: #000d8a;
-  /* --black: 15, 18, 25;
-  --gray: 96, 115, 159;
-  --gray-light: 229, 233, 240;
-  --gray-dark: 34, 41, 57;
-  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
-  --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
-    0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%); */
+
   --body-background: #f2f9ff;
-  --primary-background: #fff;
-  --header-background: #fff;
   --footer-background: #b3b2b2;
+  --header-background: #fff;
+  --hover-background: #f0f0f0;
+  --primary-background: #fff;
 
   /* Text element Variable */
   --primary-text: #333;
   --secondary-text: #aaa8a8;
   --article-text: #555;
+  --hover-text: #007bff;
+
+  /* HIGHLIGHT */
+  --highlight-color: #007bff;
+  --highlight-background: #e0f7fa;
+
+  --button-background: #007bff;
+  --button-text: #ffffff;
+  --button-hover-background: #0056b3;
+  --button-active-background: #004494;
 
   /* Link element Variable */
   /* <<<< HOVER >>>> */
@@ -54,21 +59,31 @@
   --primary-background: #3f4f44;
   --header-background: #3f4f44;
   --footer-background: #3f4f44;
-  
+
   /* Text element Variable */
   --primary-text: #dcd7c9;
   --secondary-text: #d6d6d6;
   --link-hover-2: #4b4376;
   --article-text: #fff;
-  
+
   /* Link element Variable */
   --link-hover: #3f4f44;
   --link-hover-2: #fff;
-  
+
   --link-primary: #dcd7c9;
   --link-stand-1: #ecdfcc;
 
   --back-to-top: #39ac4c;
+
+  --hover-background: #333333; /* Background saat hover lebih gelap */
+    --hover-color: #66b2ff; /* Warna teks saat hover */
+    --highlight-color: #66b2ff; /* Warna teks saat terpilih */
+    --highlight-background: #2a2a2a; /* Background saat terpilih */
+    --button-background: #0056b3; /* Background tombol */
+    --button-text: #ffffff; /* Warna teks tombol */
+    --button-hover-background: #004494; /* Background tombol saat hover */
+    --button-active-background: #003366; /* Background tombol saat aktif */
+
 }
 
 @font-face {
@@ -161,8 +176,8 @@ a {
     font-size: 14px;
   }
 
-  .prose h1{
-  font-size: 1.3rem;
+  .prose h1 {
+    font-size: 1.3rem;
   }
 }
 /* PROSE SECTION END */

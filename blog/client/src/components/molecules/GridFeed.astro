@@ -1,32 +1,45 @@
 ---
-import type { Articles, Blog } from "../../@types/General"
-import { generatePlaceholderPost } from "../../utils"
-import ContainerFeed from "../organisms/ContainerFeed.astro"
-import ContainerGrid from "../organisms/ContainerGrid.astro"
-import Sidebar from "../organisms/Sidebar.astro"
-import Feeds from "./Feeds.astro"
+import type { Articles, Blog } from "../../@types/General";
+import {
+  generatePlaceholderPost,
+  getArticles,
+  getContentSubCategories,
+} from "../../utils";
+import ContainerFeed from "../organisms/ContainerFeed.astro";
+import ContainerGrid from "../organisms/ContainerGrid.astro";
+import Sidebar from "../organisms/Sidebar.astro";
+import Feeds from "./Feeds.astro";
+import SubcategoryFeed from "./SubcategoryFeed.astro";
 
 interface Props {
-    posts : Articles[]
-    totalPost: number;
+  posts: Articles[];
+  totalPost: number;
+  category: string;
 }
 
-const { posts, totalPost } = Astro.props
+const { posts, totalPost, category } = Astro.props;
+
+const subCategories = getContentSubCategories(posts).flatMap((cat) => {
+  return cat.subCategories;
+});
 
 const placeholders = generatePlaceholderPost(totalPost, posts);
 ---
 
 <ContainerGrid>
-    <ContainerFeed>
-        <h2>Artikel</h2>
-        <Feeds articles={posts} placeholders={placeholders} layout="grid-feed" />
-    </ContainerFeed>
-    <Sidebar />
+  <ContainerFeed>
+    <div>
+      <SubcategoryFeed subCategories={subCategories} />
+      <h2>Artikel</h2>
+    </div>
+    <Feeds articles={posts} placeholders={placeholders} layout="grid-feed" />
+  </ContainerFeed>
+  <Sidebar />
 </ContainerGrid>
 
 <style>
-    h2{
-        color: var(--primary-text);
-        text-align: center;
-    }
+  h2 {
+    color: var(--primary-text);
+    text-align: center;
+  }
 </style>
