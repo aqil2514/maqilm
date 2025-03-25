@@ -141,6 +141,7 @@ export function App(props) {
       <p style={{ color: "cyan" }}>
         Ubah Background ke warna {isDark ? "putih" : "gelap"}
       </p>
+      
       <button onClick={() => setIsDark(!isDark)}>
         Ubah ke {isDark ? "putih" : "gelap"}
       </button>
