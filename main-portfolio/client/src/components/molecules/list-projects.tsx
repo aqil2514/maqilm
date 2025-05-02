@@ -13,8 +13,6 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 
-import { CgTemplate } from "react-icons/cg";
-
 export const ProjectsList: React.FC<{ projects: GenType.CardImage[] }> = ({
   projects,
 }) => {

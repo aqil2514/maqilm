@@ -103,14 +103,7 @@ export const projects: GenType.CardImage[] = [
     imageSrc: "/images/Projects/fsd-blog.png",
     imageAlt: "Aqil's Blog",
     imageCapt: "Aqil's Blog",
-    group: [
-      "Astro.js",
-      "Tailwind CSS",
-      "MDX",
-      "RSS",
-      "Sitemap",
-      "Vercel",
-    ],
+    group: ["Astro.js", "Tailwind CSS", "MDX", "RSS", "Sitemap", "Vercel"],
     ctaText: {
       en: "Visit the Blog",
       id: "Kunjungi Blog",
@@ -121,5 +114,44 @@ export const projects: GenType.CardImage[] = [
       id: "Source Code",
     },
     repoLink: "https://github.com/aqil2514/maqilm/tree/main/blog",
+  },
+  {
+    id: "fsd-stud",
+    name: "Studinesia (Living)",
+    desc: {
+      id: "Blog khusus untuk pembelajaran bahasa dan teknologi terbaru.",
+      en: "The Specified blog for learning language and technologies.",
+    },
+    imageSrc: "/images/Projects/fsd-studinesia.png",
+    imageAlt: "Studinesia",
+    imageCapt: "Studinesia",
+    group: ["Wordpress"],
+    ctaText: {
+      en: "Visit the Blog",
+      id: "Kunjungi Blog",
+    },
+    ctaLink: "https://studinesia.io/",
+  },
+  {
+    id: "fsd-aqff",
+    name: "Aqil Frozen Food",
+    desc: {
+      id: "Situs yang dibuat untuk mendukung bisnis yang sedang saya jalankan.",
+      en: "The site was built for supporitng my own bussiness.",
+    },
+    imageSrc: "/images/Projects/fsd-aqilff.png",
+    imageAlt: "Aqil Frozen Food",
+    imageCapt: "Aqil Frozen Food",
+    group: ["Next.js", "Tailwind CSS", "Zustand", "Typescript", "Vercel"],
+    ctaText: {
+      en: "Visit the Site",
+      id: "Kunjungi Situs",
+    },
+    ctaLink: "https://www.aqilff.shop/",
+    repoText: {
+      en: "Source Code",
+      id: "Source Code",
+    },
+    repoLink: "https://github.com/aqil2514/aqilff/tree/main/landing-page",
   },
 ];
