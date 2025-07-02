@@ -3,8 +3,8 @@ import { Suspense } from "react";
 
 import { useTranslations } from "next-intl";
 
-import MainContainer from "../organisms/container-main";
-import { SelectField } from "../molecules/select-field";
+import MainContainer from "../../organisms/container-main";
+import { SelectField } from "../../molecules/select-field";
 
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/utils/animation/motion-variants";

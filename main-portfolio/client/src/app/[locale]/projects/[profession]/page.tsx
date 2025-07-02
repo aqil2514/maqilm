@@ -1,4 +1,4 @@
-import ProjectsProfessionTemplate from "@/components/templates/projects-profession-template";
+import ProjectsProfessionTemplate from "@/components/templates/projects/ProjectsProfessionTemplate";
 import { professions } from "@/lib/data";
 import { Metadata } from "next";
 

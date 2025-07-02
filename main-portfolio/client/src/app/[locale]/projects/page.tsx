@@ -1,4 +1,4 @@
-import ProjectsTemplate from "@/components/templates/projects-template";
+import ProjectsTemplate from "@/components/templates/projects/ProjectsTemplate";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

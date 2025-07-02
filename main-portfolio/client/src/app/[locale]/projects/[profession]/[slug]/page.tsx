@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ArticleSlugTemplate from "@/components/templates/article-slug-template";
+import ArticleSlugTemplate from "@/components/templates/ArticleSlugTemplate";
 import { getPost } from "@/lib/sanity/queries/getPost";
 
 interface ProjectsProfessionSlugProps {

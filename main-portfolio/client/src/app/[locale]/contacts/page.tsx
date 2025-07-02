@@ -1,4 +1,4 @@
-import ContactTemplate from "@/components/templates/contact-template";
+import ContactTemplate from "@/components/templates/ContactTemplate";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

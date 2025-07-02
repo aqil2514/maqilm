@@ -1,5 +1,5 @@
 import MainContainer from "@/components/organisms/container-main";
-import ProfileProfessionTemplate from "@/components/templates/profile-profession-template";
+import ProfileProfessionTemplate from "@/components/templates/profile/ProfileProfessionTemplate";
 import { professions } from "@/lib/data";
 import { Metadata } from "next";
 

@@ -1,4 +1,4 @@
-import ProfileTemplate from "@/components/templates/profile-template";
+import ProfileTemplate from "@/components/templates/profile/ProfileTemplate";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
