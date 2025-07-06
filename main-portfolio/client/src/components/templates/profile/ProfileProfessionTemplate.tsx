@@ -7,7 +7,7 @@ import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 // Organisms
-import MainContainer from "../../organisms/container-main";
+import MainContainer from "../../atoms/container/container-main";
 import ProfessionContainer from "../../organisms/container-profession";
 
 // Molecules

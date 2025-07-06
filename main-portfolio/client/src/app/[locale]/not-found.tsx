@@ -1,6 +1,6 @@
 "use client";
 
-import MainContainer from "@/components/organisms/container-main";
+import MainContainer from "@/components/atoms/container/container-main";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";

@@ -3,7 +3,7 @@ import { dataMapping } from "@/utils/data-mapping/data-projects-mapping";
 import { useTranslations } from "next-intl";
 import { notFound, useParams } from "next/navigation";
 import { ProjectsList } from "../../molecules/list-projects";
-import MainContainer from "../../organisms/container-main";
+import MainContainer from "../../atoms/container/container-main";
 import { Suspense } from "react";
 import { SelectField } from "../../molecules/select-field";
 import { fadeUpVariant } from "@/utils/animation/motion-variants";

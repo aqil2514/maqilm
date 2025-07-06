@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import MainContainer from "../../organisms/container-main";
+import MainContainer from "../../atoms/container/container-main";
 import { SelectField } from "../../molecules/select-field";
 import { Suspense } from "react";
 

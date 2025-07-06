@@ -1,4 +1,4 @@
-import MainContainer from "@/components/organisms/container-main";
+import MainContainer from "@/components/atoms/container/container-main";
 import ProfileProfessionTemplate from "@/components/templates/profile/ProfileProfessionTemplate";
 import { professions } from "@/lib/data";
 import { Metadata } from "next";

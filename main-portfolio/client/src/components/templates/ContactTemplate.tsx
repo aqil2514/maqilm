@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
-import MainContainer from "../organisms/container-main";
+import MainContainer from "../atoms/container/container-main";
 import ContactsProvider from "@/providers/contact-provider";
 import { fadeInVariant } from "@/utils/animation/motion-variants";
 

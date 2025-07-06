@@ -1,11 +1,12 @@
 import ButtonAnimation from "@/components/atoms/button-animation";
 import TypingAnimation from "@/components/molecules/animation-typing";
 import SocialMediaList from "@/components/molecules/list-social-media";
+import { useRouter } from "@/i18n/routing";
 import { sosmedIcon } from "@/lib/data";
 import { fadeInVariant } from "@/utils/animation/motion-variants";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/navigation";
+
 export default function HeroSection() {
   const t = useTranslations();
   const profession = t.raw("General.professions");
@@ -16,7 +17,7 @@ export default function HeroSection() {
       variants={fadeInVariant}
       initial="initial"
       animate="animate"
-      className="w-full min-h-screen z-30 relative pt-48 px-4 text-center"
+      className="flex flex-col items-center justify-center w-full min-h-screen z-30"
     >
       <p>{t("HomePage.greetings")}</p>
       <p className="text-white text-2xl md:text-5xl font-young-serif">

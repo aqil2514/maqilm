@@ -11,13 +11,11 @@ export default function Footer() {
   const pathname = usePathname();
   const currentLocale = useLocale();
 
-  // Daftar bahasa yang tersedia
   const locales = [
     { code: "en", label: "English" },
     { code: "id", label: "Bahasa Indonesia" },
   ];
 
-  // Fungsi untuk mengganti bahasa
   const changeLanguage = (lang: string) => {
     if (lang !== currentLocale) {
       router.replace(pathname, { locale: lang });
