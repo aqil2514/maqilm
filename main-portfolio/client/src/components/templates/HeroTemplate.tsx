@@ -6,7 +6,7 @@ import HeroSection from "../organisms/home/HeroSection";
 
 export default function HeroTemplate() {
   return (
-    <MainContainer>
+    <MainContainer className="overflow-hidden bg-transparent">
       <ParticlesAnimation />
       <HeroSection />
     </MainContainer>

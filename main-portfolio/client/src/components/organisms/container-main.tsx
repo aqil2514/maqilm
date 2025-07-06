@@ -1,5 +1,5 @@
 "use client";
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import React from "react";
 
 export default function MainContainer({
@@ -11,7 +11,7 @@ export default function MainContainer({
 }) {
   return (
     <div
-      className={clsx(
+      className={cn(
         "bg-gray-900 w-full min-h-screen text-white py-20 px-1 md:px-4 overflow-x-hidden",
         className
       )}

@@ -11,7 +11,7 @@ export default function ProfileTemplate() {
   const t = useTranslations();
   return (
     <MainContainer>
-      <Suspense fallback={<div>Loading</div>}>
+      <Suspense fallback={<div>Loading...</div>}>
         <motion.div
           variants={fadeUpVariant}
           animate="animate"

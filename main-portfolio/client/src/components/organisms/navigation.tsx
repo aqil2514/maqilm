@@ -1,103 +1,149 @@
 "use client";
-import { Link, usePathname } from "@/i18n/routing";
+
 import { useState } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { useTranslations } from "next-intl"; // Gunakan next-intl untuk terjemahan
-import { navigationLinks } from "@/lib/data";
+import { Link, usePathname } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
+import { navigationLinks, professions } from "@/lib/data";
+import { usePathname as useNextPathname } from "next/navigation";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { AiOutlineMenu } from "react-icons/ai";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
-const ACTIVE_STYLE =
-  "after:block after:w-full after:h-[2px] after:bg-white cursor-default";
-const HOVER_STYLE =
-  "after:duration-200 transition-all after:block after:w-full after:scale-x-0 after:hover:scale-x-100 after:h-[2px] after:bg-white";
-
-const NavigationLink = ({
-  isOnPage,
-  url,
-  label,
-  onClick,
-}: {
-  isOnPage: boolean;
-  url: string;
-  label: string;
-  onClick?: () => void;
-}) => {
-  if (isOnPage) {
-    return (
-      <p key={url} className={ACTIVE_STYLE}>
-        {label}
-      </p>
-    );
-  }
-
-  return (
-    <Link
-      key={url}
-      href={url}
-      className={isOnPage ? ACTIVE_STYLE : HOVER_STYLE}
-      onClick={onClick}
-      replace
-    >
-      {label}
-    </Link>
-  );
-};
-
-export default function NavigationBar() {
+export default function MobileNavigationBar() {
   const pathName = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations("Navigation");
+  const [open, setOpen] = useState(false);
+  const nextPathname = useNextPathname();
+  const locale = nextPathname.split("/")[1] as "id" | "en";
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const isActive = (url: string) =>
+    pathName === url || pathName.startsWith(`${url}/`);
 
   return (
-    <div className="w-full text-white fixed top-0 left-0 z-50 bg-blue-900">
-      <div className="flex justify-between items-center px-4 pt-4 pb-4">
-        <Link href="/">
-          <h1>Muhamad Aqil Maulana</h1>
-        </Link>
-        <div className="md:hidden" onClick={toggleMenu}>
-          {isMenuOpen ? (
-            <AiOutlineClose size={30} />
-          ) : (
-            <AiOutlineMenu size={30} />
-          )}
-        </div>
-        <div className="hidden md:flex gap-4">
-          {navigationLinks.map(({ url, key }) => {
-            const isOnPage = new RegExp(`^${url}(/|$)`).test(pathName);
+    <div className="fixed top-0 left-0 w-full bg-blue-900 text-white z-50 md:hidden px-4 py-3 flex items-center justify-between">
+      <Link href="/" className="text-lg font-semibold">
+        Muhamad Aqil Maulana
+      </Link>
 
-            return (
-              <NavigationLink
-                key={url}
-                isOnPage={isOnPage}
-                url={url}
-                label={t(key)}
-              />
-            );
-          })}
-        </div>
-      </div>
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetTrigger asChild>
+          <button aria-label="Open menu">
+            <AiOutlineMenu size={24} />
+          </button>
+        </SheetTrigger>
 
-      {/* Menu untuk layar kecil */}
-      {isMenuOpen && (
-        <div className="md:hidden flex flex-col gap-4 px-4 pb-4">
-          {navigationLinks.map(({ url, key }) => {
-            const isOnPage = new RegExp(`^${url}(/|$)`).test(pathName);
+        <SheetContent
+          side="left"
+          className="w-3/4 sm:w-1/2 bg-blue-900/90 backdrop-blur text-white"
+        >
+          <nav className="flex flex-col gap-2 mt-8">
+            {/* Home */}
+            <Link
+              href="/"
+              className={`px-3 py-2 rounded-md transition-colors ${
+                isActive("/")
+                  ? "font-bold text-yellow-400"
+                  : "hover:bg-blue-800"
+              }`}
+              onClick={() => setOpen(false)}
+            >
+              {t("home")}
+            </Link>
 
-            return (
-              <NavigationLink
-                key={url}
-                isOnPage={isOnPage}
-                url={url}
-                label={t(key)}
-                onClick={toggleMenu}
-              />
-            );
-          })}
-        </div>
-      )}
+            {/* Profile with dropdown */}
+            <Accordion type="single" collapsible>
+              <AccordionItem value="profile">
+                <AccordionTrigger
+                  className={`px-3 py-2 text-left w-full ${
+                    isActive("/profile") ? "font-bold text-yellow-400" : ""
+                  }`}
+                >
+                  {t("profile")}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="ml-4 flex flex-col gap-1">
+                    {professions
+                      .filter((prof) => prof.fieldid !== "unselected")
+                      .map((prof) => {
+                        const href = `/profile/${prof.fieldid}`;
+                        const active = pathName === href;
+
+                        return (
+                          <Link
+                            key={prof.fieldid}
+                            href={href}
+                            className={`block px-3 py-1 rounded-md text-sm transition-colors ${
+                              active
+                                ? "bg-slate-700 text-yellow-400 font-medium"
+                                : "hover:bg-slate-700 hover:text-yellow-400"
+                            }`}
+                            onClick={() => setOpen(false)}
+                          >
+                            {locale === "en" ? prof.enLabel : prof.idLabel}
+                          </Link>
+                        );
+                      })}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* Projects with dropdown */}
+              <AccordionItem value="projects">
+                <AccordionTrigger
+                  className={`px-3 py-2 text-left w-full ${
+                    isActive("/projects") ? "font-bold text-yellow-400" : ""
+                  }`}
+                >
+                  {t("projects")}
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="ml-4 flex flex-col gap-1">
+                    {professions
+                      .filter((prof) => prof.fieldid !== "unselected")
+                      .map((prof) => {
+                        const href = `/projects/${prof.fieldid}`;
+                        const active = pathName === href;
+
+                        return (
+                          <Link
+                            key={prof.fieldid}
+                            href={href}
+                            className={`block px-3 py-1 rounded-md text-sm transition-colors ${
+                              active
+                                ? "bg-slate-700 text-yellow-400 font-medium"
+                                : "hover:bg-slate-700 hover:text-yellow-400"
+                            }`}
+                            onClick={() => setOpen(false)}
+                          >
+                            {locale === "en" ? prof.enLabel : prof.idLabel}
+                          </Link>
+                        );
+                      })}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            {/* Contacts */}
+            <Link
+              href="/contacts"
+              className={`px-3 py-2 rounded-md transition-colors ${
+                isActive("/contacts")
+                  ? "font-bold text-yellow-400"
+                  : "hover:bg-blue-800"
+              }`}
+              onClick={() => setOpen(false)}
+            >
+              {t("contacts")}
+            </Link>
+          </nav>
+        </SheetContent>
+      </Sheet>
     </div>
   );
 }

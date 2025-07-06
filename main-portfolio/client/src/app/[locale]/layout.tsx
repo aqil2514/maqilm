@@ -10,6 +10,7 @@ import { notFound, redirect } from "next/navigation";
 import { getMessages } from "next-intl/server";
 import Footer from "@/components/organisms/footer";
 import NavigationBar from "@/components/organisms/navigation";
+import Navbar from "@/components/molecules/Navbar";
 
 const siteUrl = "https://maqilm19.vercel.app/";
 const siteName = "Muhamad Aqil Maulana";
@@ -71,12 +72,10 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-
-  
   if (!routing.locales.includes(locale as any)) {
-    redirect("/id")
+    redirect("/id");
   }
-  
+
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
@@ -87,7 +86,9 @@ export default async function RootLayout({
         className={`${inter.className} ${poppins.variable} ${youngSerif.variable}`}
       >
         <NextIntlClientProvider messages={messages}>
+          {/* TODO : Sementara. Nanti pakek 1 ajah */}
           <NavigationBar />
+          <Navbar />
           {children}
           <Toaster />
           <Footer />
