@@ -145,7 +145,7 @@ export const projects: GenType.CardImage[] = [
     group: ["Next.js", "Tailwind CSS", "Zustand", "Typescript", "Vercel"],
     ctaText: {
       en: "Visit the Site",
-      id: "Kunjungi Situs",
+      id: "Lihat Situs",
     },
     ctaLink: "https://www.aqilff.shop/",
     repoText: {

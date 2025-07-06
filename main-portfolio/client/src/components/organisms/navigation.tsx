@@ -5,7 +5,12 @@ import { Link, usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { navigationLinks, professions } from "@/lib/data";
 import { usePathname as useNextPathname } from "next/navigation";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { AiOutlineMenu } from "react-icons/ai";
 import {
   Accordion,
@@ -26,7 +31,7 @@ export default function MobileNavigationBar() {
 
   return (
     <div className="fixed top-0 left-0 w-full bg-blue-900 text-white z-50 md:hidden px-4 py-3 flex items-center justify-between">
-      <Link href="/" className="text-lg font-semibold">
+      <Link href="/" className="text-lg font-semibold font-young-serif">
         Muhamad Aqil Maulana
       </Link>
 
@@ -41,6 +46,7 @@ export default function MobileNavigationBar() {
           side="left"
           className="w-3/4 sm:w-1/2 bg-blue-900/90 backdrop-blur text-white"
         >
+          <SheetTitle className="font-young-serif text-white text-base">Muhamad Aqil Maulana</SheetTitle>
           <nav className="flex flex-col gap-2 mt-8">
             {/* Home */}
             <Link

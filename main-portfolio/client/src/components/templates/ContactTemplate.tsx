@@ -7,7 +7,6 @@ import MainContainer from "../atoms/container/container-main";
 import ContactsProvider from "@/providers/contact-provider";
 import { fadeInVariant } from "@/utils/animation/motion-variants";
 
-// Dynamic import untuk lazy loading
 const ContactsBody = dynamic(() => import("../molecules/contacts-body"), { ssr: false });
 const ContactsHeader = dynamic(() => import("../molecules/contacts-header"), { ssr: false });
 

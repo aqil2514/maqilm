@@ -44,7 +44,7 @@ export default function NavigationBar() {
           : "bg-gray-900/95 backdrop-blur"
       )}
     >
-      <Link href="/" className="text-white z-50">
+      <Link href="/" className="text-white z-50 font-young-serif">
         Muhamad Aqil Maulana
       </Link>
 
