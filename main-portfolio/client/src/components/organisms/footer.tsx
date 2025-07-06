@@ -34,7 +34,7 @@ export default function Footer() {
 
         <div className="flex gap-4">
           <Link
-            href="https://github.com/aqil2514/main-portfolio"
+            href="https://github.com/aqil2514/maqilm/tree/main/main-portfolio/client"
             target="_blank"
             className="flex items-center gap-1 hover:text-sky-300 transition"
           >
