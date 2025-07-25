@@ -154,4 +154,35 @@ export const projects: GenType.CardImage[] = [
     },
     repoLink: "https://github.com/aqil2514/aqilff/tree/main/landing-page",
   },
+  {
+    id: "quiz-app-01",
+    name: "Quiz App",
+    desc: {
+      id: "Aplikasi kuis interaktif dengan berbagai fitur seperti timer, skor, dan leaderboard.",
+      en: "An interactive quiz app with features like timer, scoring, and leaderboard.",
+    },
+    imageSrc: "/images/Projects/fsd-quiz-game.png",
+    imageAlt: "Quiz App",
+    imageCapt: "Quiz App",
+    group: [
+      "Next.js",
+      "Tailwind CSS",
+      "Typescript",
+      "ShadCN",
+      "Firebase",
+      "NextAuth",
+      "Vercel",
+      "Nest Js",
+    ],
+    ctaText: {
+      en: "Try the App",
+      id: "Coba Aplikasi",
+    },
+    ctaLink: "https://quiz-game-play.vercel.app/",
+    repoText: {
+      en: "Source Code",
+      id: "Source Code",
+    },
+    repoLink: "https://github.com/aqil2514/quiz-game",
+  },
 ];
