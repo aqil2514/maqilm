@@ -7,16 +7,16 @@ import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 
 // Organisms
-import MainContainer from "../../atoms/container/container-main";
-import ProfessionContainer from "../../organisms/container-profession";
+import MainContainer from "../../layouts/container/ContainerMain";
+import ProfessionContainer from "../../layouts/container/ProfessionContainer";
 
 // Molecules
-import AnimatedIcons from "../../molecules/animated-icons";
-import { CertificateList } from "../../molecules/list-certificates";
-import DropdownMenuCategory from "../../molecules/dropdown-menu-category";
+import AnimatedIcons from "../../molecules/Carousel/IconsCarousel";
+import { CertificateList } from "../../molecules/Carousel/CertificateCarousel";
+import DropdownMenuCategory from "../../molecules/DropdownMenu/DropdownCategory";
 import Greetings from "../../molecules/greetings";
 import { SelectField } from "../../molecules/Select/select-field";
-import { WorkExperienceList } from "../../molecules/list-work-experience";
+import { WorkExperienceList } from "../../molecules/Card/WorkExperienceCard";
 
 // Libs
 import {

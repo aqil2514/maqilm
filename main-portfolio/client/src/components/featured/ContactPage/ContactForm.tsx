@@ -1,4 +1,4 @@
-import Button from "@/components/atoms/button-built-in";
+import Button from "@/components/atoms/Button/BuiltInButton";
 import { useTranslations } from "next-intl";
 import React from "react";
 

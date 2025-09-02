@@ -7,7 +7,7 @@ import {
   DialogDescription,
   DialogTitle,
   DialogTrigger,
-} from "@/components/molecules/dialog";
+} from "@/components/ui/dialog";
 import { urlFor } from "@/lib/sanity/helper";
 
 export default function InteractiveImage({ value }: { value: any }) {

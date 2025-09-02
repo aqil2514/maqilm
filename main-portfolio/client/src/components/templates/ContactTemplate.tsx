@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
-import MainContainer from "../atoms/container/container-main";
+import MainContainer from "../layouts/container/ContainerMain";
 import ContactsProvider from "@/providers/contact-provider";
 import { fadeInVariant } from "@/utils/animation/motion-variants";
 
-const ContactsBody = dynamic(() => import("../molecules/contacts-body"), { ssr: false });
-const ContactsHeader = dynamic(() => import("../molecules/contacts-header"), { ssr: false });
+const ContactsBody = dynamic(() => import("@/components/featured/ContactPage/ContactBody"), { ssr: false });
+const ContactsHeader = dynamic(() => import("@/components/featured/ContactPage/ContactHeader"), { ssr: false });
 
 export default function ContactTemplate() {
   const t = useTranslations();

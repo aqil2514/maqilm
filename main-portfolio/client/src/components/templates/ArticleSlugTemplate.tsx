@@ -5,9 +5,9 @@ import { notFound } from "next/navigation";
 
 import ArticleProvider from "@/providers/article-provider";
 
-import MainContainer from "../atoms/container/container-main";
-import PostHeader from "../organisms/post-header";
-import PostBody from "../organisms/post-body";
+import MainContainer from "../layouts/container/ContainerMain";
+import PostHeader from "../featured/Post/PostHeader";
+import PostBody from "../featured/Post/PostBody";
 
 interface ArticleSlugTemplateProps {
   post?: SanitySchema.Post;

@@ -1,5 +1,5 @@
-import ButtonAnimation from "@/components/atoms/button-animation";
-import TypingAnimation from "@/components/molecules/animation-typing";
+import ButtonAnimation from "@/components/atoms/Button/AnimationButton";
+import TypingAnimation from "@/components/atoms/Animation/TypingAnimation";
 import SocialMediaList from "@/components/molecules/list-social-media";
 import { useRouter } from "@/i18n/routing";
 import { sosmedIcon } from "@/lib/data";

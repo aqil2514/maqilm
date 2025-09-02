@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/components/atoms/button-built-in";
+import Button from "@/components/atoms/Button/BuiltInButton";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { motion } from "framer-motion";

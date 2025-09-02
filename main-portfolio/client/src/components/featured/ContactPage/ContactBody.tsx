@@ -1,5 +1,5 @@
 import { useContactsData } from "@/providers/contact-provider";
-import { ContactForm } from "./contact-form";
+import { ContactForm } from "./ContactForm";
 
 export default function ContactsBody() {
   const { via } = useContactsData();

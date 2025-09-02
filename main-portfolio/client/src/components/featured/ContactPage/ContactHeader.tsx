@@ -1,5 +1,5 @@
+import { ContactOptionButton } from "@/components/atoms/Button/ContactOptionButton";
 import { useContactsData } from "@/providers/contact-provider";
-import { ContactOptionButton } from "../atoms/button-option-contact";
 import { useTranslations } from "next-intl";
 
 export default function ContactsHeader() {

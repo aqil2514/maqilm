@@ -1,5 +1,5 @@
 import React from "react";
-import GreetingsContainer from "@/components/organisms/container-greetings";
+import GreetingsContainer from "@/components/layouts/container/GreetingContainer";
 import { useTranslations } from "next-intl";
 import AnimatedSpan from "./animated-span";
 

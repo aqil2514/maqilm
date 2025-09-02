@@ -7,8 +7,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { routing } from "@/i18n/routing";
 import { notFound, redirect } from "next/navigation";
 import { getMessages } from "next-intl/server";
-import Footer from "@/components/organisms/footer";
-import NavigationBar from "@/components/organisms/navigation";
+import Footer from "@/components/layouts/Footer/footer";
+import NavigationBar from "@/components/layouts/Header/navigation";
 import Navbar from "@/components/molecules/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 

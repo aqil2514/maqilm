@@ -11,7 +11,6 @@ namespace GenType {
     /** Nama entitas */
     name: string;
   }
-  
 
   /**
    * Interface untuk kartu informasi dasar.
@@ -65,6 +64,18 @@ namespace GenType {
     slug?: string;
     /** Video demo (opsional) */
     demoVideo?: string;
+
+    /** Fitur utama dari project */
+    features?: {
+      id: string; // Deskripsi fitur dalam bahasa Indonesia
+      en: string; // Deskripsi fitur dalam bahasa Inggris
+    }[];
+
+    /** Link demo spesifik fitur (jika ada) */
+    demoFeatures?: {
+      title: string; // Nama fitur
+      demoUrl: string; // URL demo fitur (bisa YouTube/GIF/halaman khusus)
+    }[];
   }
 
   /**
@@ -96,10 +107,10 @@ namespace GenType {
     src: string;
   }
 
-  export interface IconSkill<T = string> extends BasicInfo{
+  export interface IconSkill<T = string> extends BasicInfo {
     alt: string;
     category: T;
-    src:string;
+    src: string;
   }
 
   /**

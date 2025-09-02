@@ -1,7 +1,7 @@
 "use client";
 
-import MainContainer from "../atoms/container/container-main";
-import ParticlesAnimation from "../atoms/animation-particles";
+import MainContainer from "../layouts/container/ContainerMain";
+import ParticlesAnimation from "../atoms/Animation/ParticleAnimation";
 import HeroSection from "../organisms/home/HeroSection";
 
 export default function HeroTemplate() {

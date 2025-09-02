@@ -8,7 +8,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./dropdown-menu";
+} from "../../ui/dropdown-menu";
 import { useRouter } from "@/i18n/routing";
 import { useSearchParams } from "next/navigation";
 

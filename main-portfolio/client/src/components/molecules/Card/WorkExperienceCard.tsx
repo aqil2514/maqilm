@@ -1,6 +1,6 @@
-import WorkExperienceContainer from "@/components/organisms/container-work-experience";
+import WorkExperienceContainer from "@/components/layouts/container/WorkExperienceContainer";
 import Image from "next/image";
-import { Badge } from "@/components/atoms/badge";
+import { Badge } from "@/components/ui/badge";
 import React from "react";
 
 export function WorkExperienceList({

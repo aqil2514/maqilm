@@ -1,9 +1,7 @@
 import { useArticleData } from "@/providers/article-provider";
 import { PortableText } from "next-sanity";
 import { useParams } from "next/navigation";
-import Image from "next/image";
-import { urlFor } from "@/lib/sanity/helper";
-import InteractiveImage from "../atoms/image-interactive";
+import InteractiveImage from "../../atoms/Image/InteractiveImage";
 
 export default function PostBody() {
   const params = useParams();

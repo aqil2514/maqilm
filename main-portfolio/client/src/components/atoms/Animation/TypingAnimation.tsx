@@ -1,5 +1,4 @@
 "use client";
-import { useTranslations } from "next-intl";
 import { TypeAnimation } from "react-type-animation";
 
 interface TypingAnimationProps {

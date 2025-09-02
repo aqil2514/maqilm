@@ -1,5 +1,5 @@
-import { Badge } from "@/components/atoms/badge";
-import Button from "@/components/atoms/button-built-in";
+import { Badge } from "@/components/ui/badge";
+import Button from "@/components/atoms/Button/BuiltInButton";
 import {
   Card,
   CardContent,
@@ -41,13 +41,38 @@ export const ProjectsList: React.FC<{ projects: GenType.CardImage[] }> = ({
             <CardTitle className="text-white font-young-serif font-normal my-2">
               {project.name}
             </CardTitle>
-            <CardDescription className="flex flex-wrap gap-2 mb-2">
+            <div className="flex flex-wrap gap-2 mb-2">
               {project.group!.map((category, i) => (
                 <Badge key={i}>{category}</Badge>
               ))}
-            </CardDescription>
+            </div>
             <CardContent className="font-poppins text-white">
               {project.desc[locale]}
+
+              {/* Features (jika ada) */}
+              {project.features && (
+                <ul className="list-disc list-inside mt-2 space-y-1 text-sm text-slate-300">
+                  {project.features.map((f, i) => (
+                    <li key={i}>{f[locale]}</li>
+                  ))}
+                </ul>
+              )}
+
+              {/* Demo Features (jika ada) */}
+              {project.demoFeatures && (
+                <div className="mt-3 space-y-1">
+                  {project.demoFeatures.map((df, i) => (
+                    <Link
+                      key={i}
+                      href={df.demoUrl}
+                      target="_blank"
+                      className="block text-sky-400 hover:underline text-sm"
+                    >
+                      🎬 {df.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </CardContent>
             <CardFooter className="flex gap-4">
               <Link href={`${project.ctaLink}`} target="_blank">
