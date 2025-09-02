@@ -11,14 +11,14 @@ import {
   CardDescription,
   CardFooter,
   CardTitle,
-} from "@/components/molecules/card";
+} from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/molecules/carousel";
+} from "@/components/ui/carousel";
 
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";

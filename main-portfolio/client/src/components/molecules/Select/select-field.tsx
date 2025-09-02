@@ -9,7 +9,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/molecules/select";
+} from "@/components/ui/select";
 import { useTranslations } from "next-intl";
 import { useParams, usePathname } from "next/navigation";
 import { professions } from "@/lib/data";

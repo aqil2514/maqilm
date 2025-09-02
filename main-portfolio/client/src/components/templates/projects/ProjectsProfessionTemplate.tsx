@@ -5,7 +5,7 @@ import { notFound, useParams } from "next/navigation";
 import { ProjectsList } from "../../molecules/list-projects";
 import MainContainer from "../../atoms/container/container-main";
 import { Suspense } from "react";
-import { SelectField } from "../../molecules/select-field";
+import { SelectField } from "../../molecules/Select/select-field";
 import { fadeUpVariant } from "@/utils/animation/motion-variants";
 import { motion } from "framer-motion";
 

@@ -3,7 +3,6 @@ import "../globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import type { Metadata } from "next";
 import { Inter, Poppins, Young_Serif } from "next/font/google";
-import { Toaster } from "@/components/molecules/toaster";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { routing } from "@/i18n/routing";
 import { notFound, redirect } from "next/navigation";
@@ -11,6 +10,7 @@ import { getMessages } from "next-intl/server";
 import Footer from "@/components/organisms/footer";
 import NavigationBar from "@/components/organisms/navigation";
 import Navbar from "@/components/molecules/Navbar";
+import { Toaster } from "@/components/ui/toaster";
 
 const siteUrl = "https://maqilm19.vercel.app/";
 const siteName = "Muhamad Aqil Maulana";

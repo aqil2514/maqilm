@@ -13,12 +13,12 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/molecules/carousel";
+} from "@/components/ui/carousel";
 
 import { useAnimatedIcons } from "@/hooks/use-animated-icons";
 import { useMemo } from "react";
 import { useSearchParams } from "next/navigation";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "./hover-card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
 
 type AnimatedIconsProps<T extends string> = {
   icons?: GenType.Icon[];

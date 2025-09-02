@@ -15,7 +15,7 @@ import AnimatedIcons from "../../molecules/animated-icons";
 import { CertificateList } from "../../molecules/list-certificates";
 import DropdownMenuCategory from "../../molecules/dropdown-menu-category";
 import Greetings from "../../molecules/greetings";
-import { SelectField } from "../../molecules/select-field";
+import { SelectField } from "../../molecules/Select/select-field";
 import { WorkExperienceList } from "../../molecules/list-work-experience";
 
 // Libs

@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { useTranslations } from "next-intl";
 
 import MainContainer from "../../atoms/container/container-main";
-import { SelectField } from "../../molecules/select-field";
+import { SelectField } from "../../molecules/Select/select-field";
 
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/utils/animation/motion-variants";
