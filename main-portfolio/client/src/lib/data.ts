@@ -57,5 +57,12 @@ export const sosmedIcon: GenType.Icon[] = [
     src: "/images/Icons/linkedin.png",
     link: "https://www.linkedin.com/in/aqil2514/",
   },
+  {
+    name: "Fiverr",
+    id: "ic-fiv",
+    alt: "Fiverr Icon",
+    src: "/images/Icons/fiverr.png",
+    link: "https://www.fiverr.com/s/jjZLA9v",
+  },
 ];
 
