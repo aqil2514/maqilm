@@ -5,17 +5,17 @@ import type { Metadata } from "next";
 import { Inter, Poppins, Young_Serif } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { routing } from "@/i18n/routing";
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import { getMessages } from "next-intl/server";
 import Footer from "@/components/layouts/Footer/footer";
 import NavigationBar from "@/components/layouts/Header/navigation";
 import Navbar from "@/components/molecules/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 
-const siteUrl = "https://maqilm19.vercel.app/";
+const siteUrl = "https://cv.maqilm.site/id";
 const siteName = "Muhamad Aqil Maulana";
 const siteDescription =
-  "Portofolio Muhamad Aqil Maulana, menampilkan proyek dan pengalaman kerja.";
+  "Muhamad Aqil Maulana - Fullstack Developer";
 const siteImage = "/images/og-image.jpg";
 
 export const metadata: Metadata = {
@@ -92,7 +92,7 @@ export default async function RootLayout({
           {children}
           <Toaster />
           <Footer />
-          <GoogleAnalytics gaId="G-Z1L88CZ8W4" />
+          <GoogleAnalytics gaId="G-LQDFHMLYYD" />
         </NextIntlClientProvider>
       </body>
     </html>
