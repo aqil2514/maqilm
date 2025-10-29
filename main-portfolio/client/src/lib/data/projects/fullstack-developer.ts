@@ -223,7 +223,7 @@ export const projects: GenType.CardImage[] = [
   },
   {
     id: "studinesia-nextjs-01",
-    name: "Studinesia Web (Live)",
+    name: "Studinesia Web (Archived)",
     desc: {
       id: "Situs blog yang dibuat dengan Nextjs.",
       en: "Blog site was built by Nextjs",
@@ -261,7 +261,7 @@ export const projects: GenType.CardImage[] = [
   },
   {
     id: "studinesia-admin-01",
-    name: "Studinesia Admin (Live)",
+    name: "Studinesia Admin (Archived)",
     desc: {
       id: "Situs admin untuk pengelolahan konten situs blog Studinesia",
       en: "Admin site form studinesia web",
@@ -325,5 +325,173 @@ export const projects: GenType.CardImage[] = [
       },
     ],
     repoLink: "https://github.com/aqil2514/studinesia",
+  },
+  {
+    id: "cromachain-presale",
+    name: "Cromachain Presale (Live)",
+    desc: {
+      id: "Platform Web3 interaktif untuk pembelian dan manajemen token CRM serta CMC, lengkap dengan sistem referral, dashboard admin, dan gateway pembayaran otomatis.",
+      en: "An interactive Web3 platform for purchasing and managing CRM and CMC tokens, featuring an integrated referral system, admin dashboard, and automated payment gateway.",
+    },
+    imageSrc: "/images/Projects/fsd-cromachain-presale.png",
+    imageAlt: "Cromachain Presale",
+    imageCapt: "Cromachain Presale",
+    group: [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "ShadCN",
+      "Supabase",
+      "Wagmi",
+      "Vercel",
+      "NestJS",
+      "Payment Gateway",
+      "Webhooks",
+    ],
+    repoText: {
+      en: "Source Code",
+      id: "Kode Sumber",
+    },
+    ctaText: {
+      en: "Visit Site",
+      id: "Kunjungi Situs",
+    },
+    ctaLink: "https://presale.cromachain.com/",
+    features: [
+      {
+        en: "Connect crypto wallet seamlessly using Wagmi and MetaMask integration.",
+        id: "Koneksi dompet kripto secara mulus melalui integrasi Wagmi dan MetaMask.",
+      },
+      {
+        en: "Real-time token purchase and tracking for CRM and CMC presales.",
+        id: "Pembelian token CRM dan CMC secara real-time dengan pelacakan transaksi langsung.",
+      },
+      {
+        en: "Automated referral system with instant cashback and multi-level tracking.",
+        id: "Sistem referral otomatis dengan cashback instan dan pelacakan multi-level.",
+      },
+      {
+        en: "Secure payment gateway integration with server-side verification and webhook support.",
+        id: "Integrasi gateway pembayaran aman dengan verifikasi server-side dan dukungan webhook.",
+      },
+      {
+        en: "Admin dashboard to monitor transactions, withdrawal requests, and user activity.",
+        id: "Dashboard admin untuk memantau transaksi, permintaan penarikan, dan aktivitas pengguna.",
+      },
+      {
+        en: "Supabase-powered backend for real-time data synchronization and scalable storage.",
+        id: "Backend berbasis Supabase untuk sinkronisasi data real-time dan penyimpanan yang skalabel.",
+      },
+      {
+        en: "Built with Next.js and NestJS for optimized performance and maintainable architecture.",
+        id: "Dibangun dengan Next.js dan NestJS untuk performa optimal dan arsitektur yang mudah dirawat.",
+      },
+      {
+        en: "Deployed on Vercel with continuous integration for smooth production delivery.",
+        id: "Dideploy di Vercel dengan integrasi berkelanjutan untuk proses rilis yang lancar.",
+      },
+    ],
+    demoFeatures: [
+      {
+        demoUrl: "https://www.youtube.com/watch?v=4ddkftgQwv8",
+        title: "Wallet Connection & Referral System",
+      },
+      {
+        demoUrl: "https://www.youtube.com/watch?v=om8c2peSh90",
+        title: "Airdrop Migration to Presale",
+      },
+      {
+        demoUrl: "https://www.youtube.com/watch?v=XUZOcz3G4Ak",
+        title: "Eligibility Update",
+      },
+      {
+        demoUrl: "https://www.youtube.com/watch?v=lpLvDz9QgXE",
+        title: "Payment Gateway & Referral Cashback",
+      },
+      {
+        demoUrl: "https://www.youtube.com/watch?v=4B5TNdY0XKA",
+        title: "Admin Dashboard – Transactions",
+      },
+      {
+        demoUrl: "https://www.youtube.com/watch?v=il0xa5YDnyg",
+        title: "Admin Dashboard – Withdraw Request (Dummy)",
+      },
+    ],
+  },
+  {
+    id: "dragon-8-travel",
+    name: "Dragon 8 Travel (Live)",
+    desc: {
+      id: "Website resmi perusahaan travel yang menghubungkan China dan Indonesia, dengan tampilan profesional, sistem CMS dinamis, dan dukungan multi-bahasa untuk memperkuat pengalaman pengguna internasional.",
+      en: "Official website of a China–Indonesia travel company, featuring a professional design, dynamic CMS integration, and multilingual support to enhance the international user experience.",
+    },
+    imageSrc: "/images/Projects/fsd-dragon8.png",
+    imageAlt: "Dragon 8 Travel Website",
+    imageCapt: "Dragon 8 Travel Website",
+    group: [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "ShadCN",
+      "Supabase",
+      "Google OAuth",
+      "Vercel",
+      "CMS",
+      "File Hosting",
+      "i18n",
+    ],
+    repoText: {
+      en: "Source Code",
+      id: "Kode Sumber",
+    },
+    ctaText: {
+      en: "Visit Site",
+      id: "Kunjungi Situs",
+    },
+    ctaLink: "https://dragon8travel.com/", // ganti ke domain aslinya kalau sudah live
+    features: [
+      {
+        en: "Dynamic content management system powered by Supabase, allowing admin to update homepage, hero sliders, and articles in real time.",
+        id: "Sistem manajemen konten dinamis berbasis Supabase yang memungkinkan admin memperbarui beranda, slider hero, dan artikel secara real-time.",
+      },
+      {
+        en: "Integrated authentication using Google OAuth for secure and convenient access to the CMS dashboard.",
+        id: "Autentikasi terintegrasi menggunakan Google OAuth untuk akses aman dan praktis ke dashboard CMS.",
+      },
+      {
+        en: "Seamless bilingual support (English, Bahasa Indonesia, Mandarin) with automatic language detection and manual switcher.",
+        id: "Dukungan dua bahasa (Inggris, Indonesia, Chinese) dengan deteksi otomatis dan pemilih bahasa manual.",
+      },
+      {
+        en: "Responsive, visually rich design optimized for mobile, tablet, and desktop using Tailwind CSS.",
+        id: "Desain responsif dan menarik yang dioptimalkan untuk perangkat mobile, tablet, dan desktop menggunakan Tailwind CSS.",
+      },
+      {
+        en: "Image hosting and optimization via Cloudinary integration for fast and high-quality media delivery.",
+        id: "Hosting dan optimasi gambar melalui integrasi Cloudinary untuk kecepatan tinggi dan kualitas media terbaik.",
+      },
+      {
+        en: "Admin dashboard with live preview, content versioning, and image upload capabilities.",
+        id: "Dashboard admin dengan fitur pratinjau langsung, versi konten, dan kemampuan unggah gambar.",
+      },
+      {
+        en: "Modern frontend architecture built with Next.js 15 and TypeScript for scalability and performance.",
+        id: "Arsitektur frontend modern menggunakan Next.js 15 dan TypeScript untuk skalabilitas dan performa tinggi.",
+      },
+      {
+        en: "Deployed on Vercel with continuous integration and optimized SEO metadata for better global reach.",
+        id: "Dideploy di Vercel dengan integrasi berkelanjutan serta metadata SEO yang dioptimalkan untuk jangkauan global.",
+      },
+    ],
+    demoFeatures: [
+      {
+        demoUrl: "https://www.youtube.com/watch?v=tPOYawZKq-s",
+        title: "Hero Section Slider CMS",
+      },
+      {
+        demoUrl: "https://www.youtube.com/watch?v=3MKt-xFpyN4",
+        title: "Home Page CMS",
+      },
+    ],
   },
 ];
