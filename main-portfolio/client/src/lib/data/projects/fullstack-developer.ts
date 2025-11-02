@@ -93,7 +93,7 @@ export const projects: GenType.CardImage[] = [
   },
   {
     id: "dragon-8-travel",
-    name: "Dragon 8 Travel (Live)",
+    name: "Dragon 8 Travel (On Progress)",
     desc: {
       id: "Website resmi perusahaan travel yang menghubungkan China dan Indonesia, dengan tampilan profesional, sistem CMS dinamis, dan dukungan multi-bahasa untuk memperkuat pengalaman pengguna internasional.",
       en: "Official website of a China–Indonesia travel company, featuring a professional design, dynamic CMS integration, and multilingual support to enhance the international user experience.",
